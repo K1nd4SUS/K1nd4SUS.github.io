@@ -6,8 +6,8 @@ permalink: /
 
 ## Chi siamo
 
-Il K!nd4SUS Cybersecurity Team è il team di CTF player dell'[Università degli Studi di Milano](https://www.unimi.it/) (UniMI) e interessati alla cybersecurity e, più in generale, a tutto ciò che ha a vedere con l'informatica. <br>
-La nostra origine risale al 2021 quando un gruppetto di persone decise, a seguito del progetto [CyberChallenge.IT](https://cyberchallenge.it/), di proseguire con le attività nell'ambito. <br>
+Il K!nd4SUS Cybersecurity Team è la squadra di CTF player dell'[Università degli Studi di Milano](https://www.unimi.it/) (UniMI), composta da appassionati di cybersecurity e di tutto ciò che riguarda l'informatica. <br>
+L'origine dei K!nd4SUS risale al 2021 quando un gruppetto di persone, a seguito del progetto [CyberChallenge.IT](https://cyberchallenge.it/), decise di proseguire con le attività nell'ambito. <br>
 Negli anni il team è cresciuto e si è trasformato diventando, nel 2024, un Gruppo Studentesco legato all'UniMI.<br>
 Ora le attività proposte dal gruppo riguardano vari ambiti, tra cui:
 - sostegno alla community nell'ambito delle CTF mediante la partecipazione a competizioni sia nazionali che internazionali;
