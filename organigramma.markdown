@@ -26,3 +26,4 @@ permalink: /organigramma
 ## Amministratori
 - Delega al sito: [Rocco Amico](/author/kuom)
 - Delega al sito: [Cristian Salvi](/author/salvi)
+- Delega a Social Media e Eventi: Alessandro Mellone

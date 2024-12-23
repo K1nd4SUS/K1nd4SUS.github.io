@@ -20,6 +20,7 @@ Per contattarci e seguire le nostre attività puoi usare i seguenti link:
  - [Matteo Zoia](https://t.me/teozoia): Vicepresidente
  - [Rocco Amico](https://t.me/ohkuom): Amministratore con delega al sito
  - [Cristian Salvi](https://t.me/salv1ni): Amministratore con delega al sito
+ - [Alessandro Mellone](https://t.me/melloc03): Amministratore con delega a Social Media e Eventi
 
 ## Iniziative
 - Il nostro profilo su [CTFtime](https://ctftime.org/team/150337)
