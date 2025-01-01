@@ -4,6 +4,7 @@ kuom:
   avatar:
   socials:
     github: 'ohkuom'
+    linkedin: 'roccoamico'
     x: ''
   website: ''
 
@@ -36,3 +37,29 @@ salvi:
     github: '5alv1'
     x: ''
   website: 'https://5alv1.github.io'
+
+
+tiz314:
+  name: 'tiz314'
+  bio: 'Cybersec@UniMI - Reverse engineering & Computer forensics.'
+  socials:
+    github: 'tiz314'
+  website: 'https://tiz314.it'
+
+
+rebelnightmare:
+  name: 'RebelNightmare_'
+  bio: 'Cybersecurity student, passionate about reverse engineering, software security and forensic analysis.'
+  avatar: ../../static/melissa.jpg
+  socials: 
+    github: 'Rebel-Nightmare'
+
+ivalexev:
+  name: 'Aleksandar Ivanov'
+  bio: 'Appassionato di tutte le tematiche di Cyber Security. Focalizzato principalmente sul Penetration Test, Red Team. Giocatore attivo di CTF e HTB.'
+  avatar: ../../static/alex.jpg
+  socials:
+    github: 'IvAlexEv'
+    discord: 'IvAlexEv'
+    linkedin: 'IvAlexEv'
+  website: 'https://ivalexev.gitbook.io/rednote'
