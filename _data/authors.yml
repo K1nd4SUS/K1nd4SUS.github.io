@@ -1,12 +1,13 @@
 kuom:
   name: '[kuom]'
   bio: 'Offensive security specialist, malware enthusiast and developer of this website.'
-  avatar:
+  avatar: ''
   socials:
     github: 'ohkuom'
     linkedin: 'roccoamico'
     x: ''
   website: ''
+  linkedin: 'https://linkedin.com/in/roccoamico'
 
 
 k!nd4sus:
@@ -17,6 +18,7 @@ k!nd4sus:
     github: 'k1nd4sus'
     x: 'k1nd4SUS_ctf'
   website: ''
+  linkedin: ''
 
 
 perfumo:
@@ -27,24 +29,29 @@ perfumo:
     github: 'mperf'
     x: ''
   website: 'https://mattiaperfumo.it'
+  linkedin: ''
 
 
 salvi:
   name: 'Cristian Salvi'
   bio: 'just a pwner.'
-  avatar:
+  avatar: ''
   socials:
     github: '5alv1'
     x: ''
   website: 'https://5alv1.github.io'
+  linkedin: ''
 
 
 tiz314:
   name: 'tiz314'
   bio: 'Cybersec@UniMI - Reverse engineering & Computer forensics.'
+  avatar: ''  
   socials:
     github: 'tiz314'
+    x: ''
   website: 'https://tiz314.it'
+  linkedin: ''
 
 
 rebelnightmare:
@@ -54,6 +61,8 @@ rebelnightmare:
   socials: 
     github: 'Rebel-Nightmare'
     x: ''
+  website: ''
+  linkedin: ''
 
 
 ivalexev:
@@ -63,6 +72,5 @@ ivalexev:
   socials:
     github: 'IvAlexEv'
     x: ''
-    discord: 'IvAlexEv'
-    linkedin: 'IvAlexEv'
   website: 'https://ivalexev.gitbook.io/rednote'
+  linkedin: 'https://linkedin.com/in/IvAlexEv'

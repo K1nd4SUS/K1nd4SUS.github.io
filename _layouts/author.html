@@ -98,7 +98,10 @@ layout: base
         <!-- Social media links, viene mostrato solo se ci sono social -->
         <div class="socials {% if author.website == '' and author.socials.github == '' and author.socials.x == '' %}empty{% endif %}">
           {% if author.website != '' %}
-            <a href="{{ author.website }}" target="_blank">Sito</a>
+            <a href="{{ author.website }}" target="_blank">Website</a>
+          {% endif %}
+          {% if author.linkedin != '' %}
+            <a href="{{ author.linkedin }}" target="_blank">LinkedIn</a>
           {% endif %}
           {% if author.socials.github != '' %}
             <a href="https://github.com/{{ author.socials.github }}" target="_blank">GitHub</a>
