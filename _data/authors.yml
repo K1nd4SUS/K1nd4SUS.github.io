@@ -53,6 +53,7 @@ rebelnightmare:
   avatar: ../../static/melissa.jpg
   socials: 
     github: 'Rebel-Nightmare'
+    x: ''
 
 
 ivalexev:
@@ -61,6 +62,7 @@ ivalexev:
   avatar: ../../static/alex.jpg
   socials:
     github: 'IvAlexEv'
+    x: ''
     discord: 'IvAlexEv'
     linkedin: 'IvAlexEv'
   website: 'https://ivalexev.gitbook.io/rednote'
