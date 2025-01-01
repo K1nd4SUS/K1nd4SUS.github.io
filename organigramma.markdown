@@ -29,5 +29,5 @@ permalink: /organigramma
 - Delega a Social Media e Eventi: Alessandro Mellone
 
 ## Membri attivi
-- [Aleksandar Ivanov](/author/ivanov)
+- [Aleksandar Ivanov](/author/ivalexev)
 - [Melissa Moioli](/author/rebelnightmare)
