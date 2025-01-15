@@ -76,7 +76,8 @@ In particular:
 - `CoInitializeEx` -> initializes the COM library
 - `CoCreateInstance` -> creates an instance of a COM object
 - `CLSIDFromString` -> converts string into Class ID, needed to create COM objects
-- `CoUninitialize` -> uninitializes the COM library 
+- `CoUninitialize` -> uninitializes the COM library
+
 ```
 	HRESULT MyCoInitializeEx(LPVOID pvReserved, DWORD dwCoInit) {
         typedef HRESULT(WINAPI* pCoInitializeEx)(LPVOID, DWORD);
