@@ -216,7 +216,7 @@ DWORD COMSpawn() {
 ### Testing the BOF
 As mentioned earlier, the Visual Studio BOF template makes it easy to test and debug BOFs directly within the IDE, removing the need for external tools. 
 We can simply press the Debug button to test our BOF, and it's a good idea to test both the x64 and x86 versions to ensure compatibility across different architectures.
-![[/assets/com-spawner2.png]]
+![](/assets/com-spawner1.png)
 ### Building the BOF
 We compile the object file using mingw32-gcc for 64 bit
 ```
@@ -229,8 +229,8 @@ x86_64-w64-mingw32-gcc -c -m32 COMSpawn.cpp -o COMSpawn64.o
 After that, we test them using TrustedSec's COFFLoader, a tool designed to load and execute BOF.
 A nice read to learn more about COFF https://otterhacker.github.io/Malware/CoffLoader.html#compatibility-with-cobaltstrike-bof
 This allows us to test the functionality of the compiled BOFs in a controlled environment.
-![[/assets/com-spawner2.png]]
+![](/assets/com-spawner2.png)
 We can now test it within Cobalt Strike itself. <br>
 Feel free to utilize this with Cobalt Strike and extend its functionality. 
-Currently, I’m developing a new BOF, this time using the `IStandartActivator` COM interface, to facilitate process spawning in alternate sessions instead of the active one."
+Currently, I’m developing a new BOF, this time using the `IStandartActivator` COM interface, to facilitate process spawning in alternate sessions instead of the active one.
 #### [Full snippet on GitHub](https://github.com/ohkuom/IHxHelpPaneServerBOF/)
