@@ -162,7 +162,9 @@ In particular:
     }
 ```
 
-We define a function to initialize the CLSID and IID identifiers associated with the `IHxHelpPaneServer` interface. It uses the `MyCLSIDFromString` function to obtain these identifiers from predefined GUID strings.
+We define a function to initialize the CLSID and IID identifiers associated with the `IHxHelpPaneServer` interface. 
+
+It uses the `MyCLSIDFromString` function to obtain these identifiers from predefined GUID strings.
 ```
     HRESULT CoInitializeIHxHelpIds(LPGUID Clsid, LPGUID Iid) {
         HRESULT Result = S_OK;
@@ -240,7 +242,7 @@ x86_64-w64-mingw32-gcc -c -m32 COMSpawn.cpp -o COMSpawn64.o
 ```
 After that, we test them using TrustedSec's COFFLoader, a tool designed to load and execute BOF; this allows us to test the functionality of the compiled BOFs in a controlled environment.
 
-A nice read to [learn more about COFF](https://otterhacker.github.io/Malware/CoffLoader.html#compatibility-with-cobaltstrike-bof)
+A nice read to [learn more about COFF](https://otterhacker.github.io/Malware/CoffLoader.html#compatibility-with-cobaltstrike-bof).
 ![](/assets/com-spawner2.png)
 We can now test it within Cobalt Strike itself.
 
