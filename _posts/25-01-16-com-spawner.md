@@ -147,7 +147,7 @@ As mentioned earlier, the Visual Studio BOF template makes it easy to test and d
 We can simply press the Debug button to test our BOF, and it's a good idea to test both the x64 and x86 versions to ensure compatibility across different architectures.
 ![](/assets/com-spawner1.png)
 ### Building the BOF
-We compile the object files switching from Debug to Release for both z64 and x86 architecture. 
+We compile the object files switching from Debug to Release for both x64 and x86 architecture. 
 
 After that, we test them using TrustedSec's COFFLoader, a tool designed to load and execute BOF; this allows us to test the functionality of the compiled BOFs in a controlled environment.
 
