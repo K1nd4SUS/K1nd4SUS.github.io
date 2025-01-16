@@ -8,9 +8,7 @@ categories:
 author: kuom
 ---
 This guide focuses on developing a Cobalt Strike Beacon Object File (BOF) for creating a COM (Component Object Model) process spawner.
-
 This technique is useful during engagements for session passing and enabling the execution of multiple beacons simultaneously.
-
 The main idea is to stealthily spawn a process in the current context using a legitimate Windows COM interface, `IHxHelpPaneServer`.
 ### Prerequisites Knowledge
 A [Beacon Object File](https://hstechdocs.helpsystems.com/manuals/corects/impact/current/userguide/content/topics/appx_bof.htm) is a compiled C program written to a convention that allows it to execute within an agent process and use internal agent APIs. 
