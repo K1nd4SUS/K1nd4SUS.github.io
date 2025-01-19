@@ -45,6 +45,7 @@ We then use the [DFR (Dynamic Function Resolution)](https://hstechdocs.helpsyste
 - `CoCreateInstance` -> creates an instance of a COM object
 - `CLSIDFromString` -> converts string into Class ID, needed to create COM objects
 - `CoUninitialize` -> uninitializes the COM library
+
 ````
 extern "C" {
 #include "beacon.h"
