@@ -27,10 +27,13 @@ plugins:
 minima:
   skin:  dark
   social_links:
-    github: K1nd4SUS
-    x: k1nd4sus_ctf
-    youtube_channel: @k1nd4sus
-    telegram: +Rej8qbbkONMxZTdk
+    - title: GitHub
+      icon: github
+      url: "https://github.com/K1nd4SUS/"
+    - title: X
+      icon: x-twitter
+      url: "https://x.com/k1nd4sus_ctf"
+  
 
   #social_links:
   #  - title: Minima Theme repository at GitHub
