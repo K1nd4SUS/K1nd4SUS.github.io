@@ -27,9 +27,18 @@ plugins:
 minima:
   skin:  dark
   social_links:
-    - { platform: github,  user_url: "https://github.com/K1nd4SUS" }
-    - { platform: x, user_url: "https://x.com/k1nd4sus_ctf" }
-    - { platform: telegram, user_url: "https://t.me/+Rej8qbbkONMxZTdk" }
+    github: K1nd4SUS
+    x: k1nd4sus_ctf
+    youtube_channel: @k1nd4sus
+    telegram: +Rej8qbbkONMxZTdk
+
+  #social_links:
+  #  - title: Minima Theme repository at GitHub
+  #    icon: github
+  #    url: "https://github.com/jekyll/minima"
+  #  - title: Jekyll at X (formerly Twitter)
+  #    icon: x-twitter
+  #    url: "https://x.com/jekyllrb"
 
 description: Università degli Studi di Milano
 
