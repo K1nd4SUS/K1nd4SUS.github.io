@@ -1,7 +1,7 @@
 kuom:
   name: '[kuom]'
   bio: 'Offensive security specialist, malware enthusiast and developer of this website.'
-  avatar: ''
+  avatar: ../../static/kuom.jpg
   socials:
     github: 'ohkuom'
     x: ''
