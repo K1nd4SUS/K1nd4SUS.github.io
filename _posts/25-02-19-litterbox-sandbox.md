@@ -7,10 +7,10 @@ categories:
   - Malware
 author: kuom
 ---
-It is importat to test malware before deploying it to make sure it is FUD (Fully Undetectable) and it doesn't have any IoC (Indicator of Compromise). <br>
+It is important to test malware before deploying it to make sure it is FUD (Fully Undetectable) and it doesn't have any IoC (Indicator of Compromise). <br>
 Lately I tried a nice [sandbox](https://github.com/BlackSnufkin/LitterBox). It offers both analysis and dynamic analysis, plus scanning a running process and doing memory analysis at runtime.
 ### Installation
-Reccomended on Windows; fairly simple: git clone and execute python litterbox.py.
+Recommended on Windows; fairly simple: git clone and execute python litterbox.py.
 ### Samples
 We will try different samples, from a basic meterpreter reverse shell to more advanced payloads.
 The focus today is to test how this sandbox react and with different level C2 and different levels of evasiveness.
