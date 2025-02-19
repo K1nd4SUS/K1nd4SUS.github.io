@@ -22,17 +22,17 @@ use exploit/multi/handler
 set LPORT <port>
 set LHOST <ip>
 ```
-![[/assets/Screenshot-2025-01-21 161217.png]]
-![[/assets/Screenshot-2025-01-21 161301.png]]
+![[/assets/Screenshot-2025-01-21-161217.png]]
+![[/assets/Screenshot-2025-01-21-161301.png]]
 #### Havoc
 Set up an https listener and generate a payload with the following options, this time we wll use the Active process sandbox capabilities
-![[/assets/Screenshot-2025-01-21 151238.png]]
+![[/assets/Screenshot-2025-01-21-151238.png]]
 ##### Active Process Inspection
-![[/assets/Screenshot 2025-01-21 162202.png]]
+![[/assets/Screenshot 2025-01-21-162202.png]]
 
-![[/assets/Screenshot-2025-01-21 162224.png]]
+![[/assets/Screenshot-2025-01-21-162224.png]]
 
-![[/assets/Screenshot-2025-01-21 162318.png]]
+![[/assets/Screenshot-2025-01-21-162318.png]]
 #### Commercial C2
 ![[Pasted-image-20250122185634.png]]
 #### Early Cascade Injection + Meterpreter shellcode
