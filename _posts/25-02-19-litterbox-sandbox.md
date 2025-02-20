@@ -32,9 +32,9 @@ Set up an https listener and generate a payload with the following options, this
 
 ![](/assets/Screenshot-2025-01-21-162224.png)
 
-!![](/assets/Screenshot-2025-01-21-162318.png)
+![](/assets/Screenshot-2025-01-21-162318.png)
 #### Commercial C2
-![](Pasted-image-20250122185634.png)
+![](/assets/Pasted-image-20250122185634.png)
 #### Early Cascade Injection + Meterpreter shellcode
 For the last one, I will load the shellcode using the Early Cascade Injection technique. It seems fairly effective regarding evasiveness.
 Read more [here](https://www.outflank.nl/blog/2024/10/15/introducing-early-cascade-injection-from-windows-process-creation-to-stealthy-injection/).
