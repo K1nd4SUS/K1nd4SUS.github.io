@@ -50,6 +50,7 @@ author:
   email: >-
 
 header_pages:
+  - ctf.mad
   - about.markdown
   - blog.markdown
 #  - ctf.markdown
