@@ -53,6 +53,7 @@ header_pages:
   - about.markdown
   - blog.markdown
   - ctf.markdown
+  - milan0day.markdown
   - contatti.markdown
   - statuto.markdown
   - regolamento.markdown
