@@ -7,7 +7,7 @@ permalink: /contatti
 Per contattarci e seguire le nostre attività puoi usare i seguenti link:
 
 ## Canali pubblici
-- Il nostro [gruppo Telegram](https://t.me/+pL-r9mhL7PI4ZTJk)
+- Il nostro [gruppo Telegram](https://t.me/+_l_1wvVRK0U2MGFk)
 - Il nostro [canale delle News](https://t.me/k1nd4susCTF)
 - Il nostro [server Discord](https://discord.gg/6GTSrewn8y)
 
