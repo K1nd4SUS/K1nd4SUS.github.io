@@ -8,8 +8,10 @@ K!nd4SUS CTF is a Jeopardy-style Capture-The-Flag competition created with love 
 The challenges topics include binary exploitation, web security, reverse engineering, web3, forensics, OSINT, cryptography, and very creative miscellaneous challenges! <br>
 date: March 15 14:00 CET — March 16 14:00 CET
 
+[CTFtime page](https://ctftime.org/event/2703)
 
-<!-- ## wall Of Fame
+
+## wall Of Fame
 
 - Samuele Manclossi (S-Mancl)
 - Mattia Perfumo (unknown_matt)
@@ -21,8 +23,8 @@ date: March 15 14:00 CET — March 16 14:00 CET
 - Alessandro Mellone (melloc03)
 - Andrea Sacchi (Alsacchi)
 - Pietro Lepori (Pi)
-- Vincenzo ()
-- Andrea
-- Rocco Amico (Kuom)
+- sniirful
+- Andrea Lunghi
+- \[Kuom\]
 - Alberto Ovena (mightygibbon) 
-- Edoardo (Veprion) -->
+- Veprion
