@@ -49,7 +49,7 @@ Le nostre attività sono varie, e includono (ma non si limitano) alle seguenti:
 <ul>
 <li> Supporto al progetto CyberChallenge.IT, includendo sessioni pomeridiane e serali di allenamento insieme, con lo scopo di imparare e approfondire le tecniche di hacking etico;</li>
 <li> Partecipazione a competizioni, come le CTF internazionali, gareggiando anche contro gli altri team italiani e non;</li>
-<li>  Organizzazione di eventi in loco e online volti alla divulgazione della Sicurezza Informatica.</li>
+<li> Organizzazione di eventi in loco e online volti alla divulgazione della Sicurezza Informatica.</li>
 </ul>
 
 
