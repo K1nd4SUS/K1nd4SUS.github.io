@@ -11,7 +11,7 @@ date: March 15 14:00 CET — March 16 14:00 CET
 [CTFtime page](https://ctftime.org/event/2703)
 
 
-## wall Of Fame
+## Wall of Fame
 
 - Samuele Manclossi (S-Mancl)
 - Mattia Perfumo (unknown_matt)
@@ -23,8 +23,8 @@ date: March 15 14:00 CET — March 16 14:00 CET
 - Alessandro Mellone (melloc03)
 - Andrea Sacchi (Alsacchi)
 - Pietro Lepori (Pi)
-- sniirful
-- Andrea Lunghi
-- \[Kuom\]
+- Rocco Amico \[kuom\]
 - Alberto Ovena (mightygibbon) 
+- Andrea Lunghi
 - Veprion
+- sniirful
