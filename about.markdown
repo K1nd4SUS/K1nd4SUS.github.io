@@ -31,3 +31,6 @@ Tra i nostri risultati più significativi nel 2023 troviamo il sesto posto alla 
 ### 2024 (200+ membri)
 Siamo diventati ufficialmente un Gruppo Studentesco riconosciuto da UniMI!<br>
 Il consiglio direttivo, per l'Anno Accademico 2024/2025, è il seguente: Mattia Perfumo (Presidente), Samuele Manclossi (Tesoriere e Vicepresidente), Mirco Picca, Tiziano Radicchi, Matteo Zoia (Vicepresidenti).<br>
+
+### 2025 (250+ membri)
+Abbiamo organizzato la nostra prima ctf, la K!nd4SUS CTF 2025, parte del circuito Cybercup.it, e a cui hanno partecipato quasi 600 team da tutto il mondo!
