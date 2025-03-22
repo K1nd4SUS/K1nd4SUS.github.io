@@ -21,7 +21,7 @@ There is a nice [Visual Studio BOF template](https://github.com/Cobalt-Strike/bo
 Download the zip archive from GitHub and put it into `%USERPROFILE%\Documents\Visual Studio 2022\Templates\ProjectTemplates`. 
 Now we can choose the BOF template from Visual Studio.
 ### Creating the BOF
-For the creation of this BOF I found inspiration from this [PoC]( https://github.com/vxunderground/VXUG-Papers/blob/main/Stealthily%20Creating%20Processes/IHxHelpPaneServer.cpp.) from VX Underground.
+For the creation of this BOF I found inspiration from this [PoC]( https://github.com/vxunderground/VXUG-Papers/blob/main/Stealthily%20Creating%20Processes/IHxHelpPaneServer.cpp) from VX Underground.
 Shoutout to them and to the author.
 
 We start including needed headers file (`combaseapi` needed to work with COM) and by declaring actions to do on Debug case (`#pragma comment` indicates to the linker that ole32.lib is needed).
@@ -152,7 +152,4 @@ After that, we test them using TrustedSec's COFFLoader, a tool designed to load 
 
 ![](/assets/com-spawner2.png)
 
-We can now test it within Cobalt Strike itself. Feel free to utilize this with Cobalt Strike and extend its functionality. 
-
-Currently, I’m developing a new BOF, this time using the `IStandartActivator` COM interface, to facilitate process spawning in alternate sessions instead of the active one.
-#### [Full snippet on GitHub](https://github.com/ohkuom/IHxHelpPaneServerBOF/)
+We can now test it within Cobalt Strike itself.
