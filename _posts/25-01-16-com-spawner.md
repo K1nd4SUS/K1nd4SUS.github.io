@@ -154,4 +154,4 @@ After that, we test them using TrustedSec's COFFLoader, a tool designed to load 
 
 We can now test it within Cobalt Strike itself.
 
-## [Full snippet.](https://github.com/ohkuom/BOF-Kit/blob/master/BOF/COMProcessSpawn.cpp)
+### [Full snippet](https://github.com/ohkuom/BOF-Kit/blob/master/BOF/COMProcessSpawn.cpp)
