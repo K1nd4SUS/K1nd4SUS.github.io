@@ -1,14 +1,3 @@
-kuom:
-  name: '[kuom]'
-  bio: 'Offensive security specialist, malware enthusiast and developer of this website.'
-  avatar: ../../static/kuom.jpg
-  socials:
-    github: 'ohkuom'
-    x: ''
-  website: ''
-  linkedin: ''
-
-
 k!nd4sus:
   name: 'K!nd4SUS Staff'
   bio: 'Aggiornamenti sul gruppo e sulle prossime CTF.'
