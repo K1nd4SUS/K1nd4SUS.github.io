@@ -1,5 +1,0 @@
----
-layout: author
-author: kuom
----
-
