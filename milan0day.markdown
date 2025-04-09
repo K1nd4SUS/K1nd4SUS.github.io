@@ -10,15 +10,28 @@ A partire dalle ore 10:15, la giornata sarà un'opportunità di formazione e con
 
 Ci vediamo a Milan0day '25!
 
+### Talks
+
+Alcuni talk:
+
+- **Now I See You: Pwning the Synology BC500 Camera** - *Emanuele Barbeno*, IT Security Analyst@Compass Security (Zurigo)
+- **Quantum Safe cryptography with IBM technologies** - *Luca Crippa*, Cloud Technical Specialist & Quantum Ambassador@IBM
+- **Cloud Architecture & Security on AWS** - *Matteo Balasco*, Security engineer@Docebo
+- **Rischi Cyber: L'Interesse Composto della Minaccia Digitale** - *Xhanluka Rama*, Security engineer@Docebo
+
+
 ### Qual è l'agenda?
 
-Il programma dell'evento sarà consultabile.
+- 🕤 09:30 Registrazione all'evento
+- 🕙 10:00 Opening
+- 🕙 10:15 Inizio dell'evento
+
+L'agenda è attualmente soggetta a modifiche
 
 L'evento si svolgerà in lingua italiana.
 
 ### Devo prenotare?
-
-La partecipazione all'evento è completamente gratuita, previa iscrizione e fino a esaurimento posti. Il form per l'iscrizione sarà pubblicato prossimamente.
+Sì, [iscriviti ora!](https://www.eventbrite.com/e/biglietti-milan0day-2025-cybersecurity-conference-1302856772679)
 
 ### Vorrei presentare, come faccio?
 
