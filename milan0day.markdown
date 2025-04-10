@@ -12,8 +12,6 @@ Ci vediamo a Milan0day '25!
 
 ### Talks
 
-Alcuni talk:
-
 - **Now I See You: Pwning the Synology BC500 Camera** - *Emanuele Barbeno*, IT Security Analyst@Compass Security (Zurigo)
 - **Quantum Safe cryptography with IBM technologies** - *Luca Crippa*, Cloud Technical Specialist & Quantum Ambassador@IBM
 - **Cloud Architecture & Security on AWS** - *Matteo Balasco*, Security engineer@Docebo
