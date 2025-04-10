@@ -19,6 +19,7 @@ Alcuni talk:
 - **Cloud Architecture & Security on AWS** - *Matteo Balasco*, Security engineer@Docebo
 - **Rischi Cyber: L'Interesse Composto della Minaccia Digitale** - *Xhanluka Rama*, Security engineer@Docebo
 
+🔔 Nuovi talk a breve!
 
 ### Qual è l'agenda?
 
@@ -38,6 +39,7 @@ Sì, [iscriviti ora!](https://www.eventbrite.com/e/biglietti-milan0day-2025-cybe
 Siamo alla ricerca di speaker! Sono disponibili slot per: 
 - Relatori provenienti da realtà professionistiche e accademiche (45' talk + domande)
 - Eccellenti studenti e ricercatori con significativi risultati, tesi o progetti (15' talk + domande)
+
 Puoi inviare la tua candidatura, insieme ad un abstract della presentazione, attraverso il seguente [form](https://docs.google.com/forms/d/e/1FAIpQLScz3Xa9zS1EZiQkyT6Pz3-Cxw9kXj1gWqJFWuixRVLEJsxrrw/viewform?usp=dialog). 
 
 ### Rappresento un'azienda, come posso contribuire?
