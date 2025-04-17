@@ -29,6 +29,10 @@ L'agenda è attualmente soggetta a modifiche
 
 L'evento si svolgerà in lingua italiana.
 
+### Ci sarà una diretta streaming?
+
+Sì, l'evento sarà trasmesso in diretta sul nostro [canale Youtube](https://www.youtube.com/@k1nd4sus).
+
 ### Devo prenotare?
 Sì, [iscriviti ora!](https://www.eventbrite.com/e/biglietti-milan0day-2025-cybersecurity-conference-1302856772679)
 
