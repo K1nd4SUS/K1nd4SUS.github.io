@@ -18,6 +18,8 @@ Ci vediamo a Milan0day '25!
 - **Quantum Safe cryptography with IBM technologies** - *Luca Crippa*, Cloud Technical Specialist & Quantum Ambassador@IBM
 - **Cloud Architecture & Security on AWS** - *Matteo Balasco*, Security engineer@Docebo
 - **Rischi Cyber: L'Interesse Composto della Minaccia Digitale** - *Xhanluka Rama*, Security engineer@Docebo
+- **MITRE ATT&CK in azione: dal Process Hollowing all’analisi malware** - *Rosario Matteo Grammatico*, SOC analyst@Iliad (Milano)
+- **Cyber Intelligence: LLM, AI Agent e la  Battaglia Red/Blue Team con la tecnologia Microsoft** - *Simone Frigerio*, Cyber Security Architect@Microsoft (Milano)
 
 🔔 Nuovi talk a breve!
 
