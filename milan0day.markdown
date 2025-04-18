@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Milan0day
+title: Milan0day '25
 permalink: /milan0day
 ---
 
