@@ -14,18 +14,18 @@ Ci vediamo a Milan0day '25!
 
 ### Qual è l'agenda?
 
-- 🕤 09:30 | *Registrazione all'evento*
-- 🕙 10:00 | *Apertura*
-- 🕙 10:05 | **Rischi Cyber: L'Interesse Composto della Minaccia Digitale** - *Xhanluka Rama*, Security engineer@Docebo
-- 🕥 10:40 | **Quantum Safe cryptography with IBM technologies** - *Luca Crippa*, Cloud Technical Specialist & Quantum Ambassador@IBM
-- 🕦 11:30 | **Cloud Architecture & Security on AWS** - *Matteo Balasco*, Security engineer@Docebo
-- 🕛 12:00 | *Pausa pranzo*
-- 🕐 13:10 | **Now I See You: Pwning the Synology BC500 Camera** - *Emanuele Barbeno*, IT Security Analyst@Compass Security (Zurigo)
-- 🕑 14:05 | **Cyber Intelligence: LLM, AI Agent e la  Battaglia Red/Blue Team con la tecnologia Microsoft** - *Simone Frigerio*, Cyber Security Architect@Microsoft (Milano)
-- 🕒 15:00 | *Pausa*
-- 🕒 15:10 | **MITRE ATT&CK in azione: dal Process Hollowing all’analisi malware** - *Rosario Matteo Grammatico*, SOC analyst@Iliad (Milano)
-- 🕓 16:00 | **Sessione progetti**
-- 🕔 17:00 | *Saluti e chiusura*
+- 🕤 09:30 *Registrazione all'evento*
+- 🕙 10:00 *Apertura*
+- 🕙 10:05 **Rischi Cyber: L'Interesse Composto della Minaccia Digitale** - *Xhanluka Rama*, Security engineer@Docebo
+- 🕥 10:40 **Quantum Safe cryptography with IBM technologies** - *Luca Crippa*, Cloud Technical Specialist & Quantum Ambassador@IBM
+- 🕦 11:30 **Cloud Architecture & Security on AWS** - *Matteo Balasco*, Security engineer@Docebo
+- 🕛 12:00 *Pausa pranzo*
+- 🕐 13:10 **Now I See You: Pwning the Synology BC500 Camera** - *Emanuele Barbeno*, IT Security Analyst@Compass Security (Zurigo)
+- 🕑 14:05 **Cyber Intelligence: LLM, AI Agent e la  Battaglia Red/Blue Team con la tecnologia Microsoft** - *Simone Frigerio*, Cyber Security Architect@Microsoft (Milano)
+- 🕒 15:00 *Pausa*
+- 🕒 15:10 **MITRE ATT&CK in azione: dal Process Hollowing all’analisi malware** - *Rosario Matteo Grammatico*, SOC analyst@Iliad (Milano)
+- 🕓 16:00 **Sessione progetti**
+- 🕔 17:00 *Saluti e chiusura*
 
 L'evento si svolgerà in lingua italiana.
 
