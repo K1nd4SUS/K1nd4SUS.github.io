@@ -43,7 +43,7 @@ Puoi inviare la tua candidatura, insieme ad un abstract della presentazione, att
 
 ### Come raggiungerci
 <center>
-<img src="assets/mappa.jpg" width="400">
+<img src="assets/mappa.jpg" width="450">
 </center>
 
 ### Rappresento un'azienda, come posso contribuire?
