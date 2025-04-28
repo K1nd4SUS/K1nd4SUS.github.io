@@ -42,7 +42,9 @@ Siamo alla ricerca di speaker! Sono disponibili slot per:
 Puoi inviare la tua candidatura, insieme ad un abstract della presentazione, attraverso il seguente [form](https://docs.google.com/forms/d/e/1FAIpQLScz3Xa9zS1EZiQkyT6Pz3-Cxw9kXj1gWqJFWuixRVLEJsxrrw/viewform?usp=dialog). 
 
 ### Come raggiungerci
-![](assets/mappa.jpg)
+<center>
+<img src="assets/mappa.jpg" width="400">
+</center>
 
 ### Rappresento un'azienda, come posso contribuire?
 Se siete interessati a collaborazioni e sponsorship, contattateci all'indirizzo k1nd4susctf@gmail.com o alternativamente inviate una email al nostro tesoriere (samuele.manclossi [at] studenti.unimi.it).
