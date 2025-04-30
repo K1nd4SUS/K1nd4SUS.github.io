@@ -42,6 +42,7 @@ Siamo alla ricerca di speaker! Sono disponibili slot per:
 Puoi inviare la tua candidatura, insieme ad un abstract della presentazione, attraverso il seguente [form](https://docs.google.com/forms/d/e/1FAIpQLScz3Xa9zS1EZiQkyT6Pz3-Cxw9kXj1gWqJFWuixRVLEJsxrrw/viewform?usp=dialog). 
 
 ### Come raggiungerci
+Aula 202 **piano rialzato**
 <center>
 <img src="assets/mappa.jpg" width="450">
 </center>
