@@ -31,6 +31,7 @@ L'evento si svolgerà in lingua italiana.
 
 ### Devo prenotare?
 *Posti esauriti!*, [Iscriviti alla lista di attesa](https://www.eventbrite.com/e/biglietti-milan0day-2025-cybersecurity-conference-1302856772679)
+
 Potete comunque raggiungerci per eventuali posti vacanti
 
 ### Vorrei presentare, come faccio?
