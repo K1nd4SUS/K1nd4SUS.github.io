@@ -48,6 +48,13 @@ Aula 202 **piano rialzato**
 <img src="assets/mappa.jpg" width="450">
 </center>
 
+### Dove posso pranzare?
+I locali più vicini al dipartimento sono: 
+- Bar dipartimento di Fisica, Via Celoria 16
+- Bar Calicantus, Via Golgi 9
+
+O alternativamente, gli stand di "street food" lungo Via Celoria e Via Golgi.
+
 ### Rappresento un'azienda, come posso contribuire?
 Se siete interessati a collaborazioni e sponsorship, contattateci all'indirizzo k1nd4susctf@gmail.com o alternativamente inviate una email al nostro tesoriere (samuele.manclossi [at] studenti.unimi.it).
 
