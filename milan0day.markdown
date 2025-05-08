@@ -6,6 +6,8 @@ permalink: /milan0day
 
 ![](assets/IMG_0773.jpeg)
 
+[Link alla diretta!](https://youtube.com/live/uTkB2jCDEac)
+
 Siamo lieti di annunciare Milan0day '25, la prima conferenza di CyberSecurity in Statale organizzata da K!nd4SUS CTF Team. L'evento si terrà in data 8 maggio presso il campus Città Studi dell'Università degli Studi di Milano. 
 
 A partire dalle ore 10:00, la giornata sarà un'opportunità di formazione e confronto con ospiti di eccellenza e specialisti del settore. Sarà inoltre occasione per presentare significativi risultati di ricerca e progetti da parte di ricercatori, docenti e studenti (sia attuali che ex). 
