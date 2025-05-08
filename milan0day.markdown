@@ -26,7 +26,7 @@ Ci vediamo a Milan0day '25!
 - 🕒 15:10 **MITRE ATT&CK in azione: dal Process Hollowing all’analisi malware** - *Rosario Matteo Grammatico*, SOC analyst@Iliad (Milano)
 - 🕓 16:05 **Accetto! - Watson Privacy**
 - 🕓 16:20 **Presentazione Team K!nd4SUS**
-- 🕔 17:00 *Saluti e chiusura*
+- 🕔 16:45 *Saluti e chiusura*
 
 L'evento si svolgerà in lingua italiana.
 
