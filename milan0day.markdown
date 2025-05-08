@@ -24,7 +24,8 @@ Ci vediamo a Milan0day '25!
 - 🕑 14:05 **Cyber Intelligence: LLM, AI Agent e la  Battaglia Red/Blue Team con la tecnologia Microsoft** - *Simone Frigerio*, Cyber Security Architect@Microsoft (Milano)
 - 🕒 15:00 *Pausa*
 - 🕒 15:10 **MITRE ATT&CK in azione: dal Process Hollowing all’analisi malware** - *Rosario Matteo Grammatico*, SOC analyst@Iliad (Milano)
-- 🕓 16:00 **Sessione progetti**
+- 🕓 16:05 **Accetto! - Watson Privacy**
+- 🕓 16:20 **Presentazione Team K!nd4SUS**
 - 🕔 17:00 *Saluti e chiusura*
 
 L'evento si svolgerà in lingua italiana.
