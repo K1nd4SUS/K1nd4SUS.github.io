@@ -33,4 +33,4 @@ Siamo diventati ufficialmente un Gruppo Studentesco riconosciuto da UniMI!<br>
 Il consiglio direttivo, per l'Anno Accademico 2024/2025, è il seguente: Mattia Perfumo (Presidente), Samuele Manclossi (Tesoriere e Vicepresidente), Mirco Picca, Tiziano Radicchi, Matteo Zoia (Vicepresidenti).<br>
 
 ### 2025 (250+ membri)
-Abbiamo organizzato la nostra prima CTF, la K!nd4SUS CTF 2025, parte del circuito CyberCup.it, e a cui hanno partecipato quasi 600 team da tutto il mondo! Inoltre, abbiamo conquistato la sesta posizione nella CTF@CIT 2025.
+Abbiamo organizzato la nostra prima CTF, la K!nd4SUS CTF 2025, parte del circuito CyberCup.it, e a cui hanno partecipato quasi 600 team da tutto il mondo! Inoltre, abbiamo conquistato la sesta posizione nella CTF@CIT 2025 e **il quinto posto nella CyberCup.it 2025**.
