@@ -3,12 +3,12 @@ layout: page
 title: Organigramma
 permalink: /organigramma
 ---
-## Membri dell'Assemblea Direttiva:
-- Presidente: [Mattia Perfumo](/author/perfumo)
-- Tesoriere e Vicepresidente: Samuele Manclossi
-- Vicepresidente: Mirco Picca
-- Vicepresidente: [Tiziano Radicchi](/author/tiz314)
-- Vicepresidente: Matteo Zoia
+## Membri dell'Assemblea Direttiva e Referenti Gruppo Studentesco:
+- Presidente: Samuele Manclossi
+- Tesoriere e Vicepresidente: [Cristian Salvi](/author/salvi)
+- Vicepresidente: [Niccolò Volontè](/author/niccolovlnt)
+- Vicepresidente: Alessandro Mellone
+- Vicepresidente: Andrea Lunghi
 
 ## Membri fondatori
 - Edoardo Della Rossa
@@ -18,16 +18,18 @@ permalink: /organigramma
 - [Tiziano Radicchi](/author/tiz314)
 - Matteo Zoia
 
-## Referenti del Gruppo Studentesco
-- Samuele Manclossi
-- [Mattia Perfumo](/author/perfumo)
-- [Tiziano Radicchi](/author/tiz314)
-
 ## Amministratori
-- Delega al sito: [Rocco Amico](/author/kuom)
-- Delega al sito: [Cristian Salvi](/author/salvi)
-- Delega a Social Media e Eventi: Alessandro Mellone
+- Delega al sito: Emma Privitera
+
+## Membri onorari
+- Ex Presidente: [Mattia Perfumo](/author/perfumo)
+- Ex Vicepresidente: [Tiziano Radicchi](/author/tiz314)
+- Ex Vicepresidente: Mirco Picca
+- Ex Vicepresidente: Matteo Zoia
 
 ## Membri attivi
 - [Aleksandar Ivanov](/author/ivalexev)
 - [Melissa Moioli](/author/rebelnightmare)
+- [Tiziano Radicchi](/author/tiz314)
+- [Mattia Perfumo](/author/perfumo)
+- Rocco Amico
