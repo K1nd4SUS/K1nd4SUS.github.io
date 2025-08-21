@@ -59,6 +59,7 @@ header_pages:
   - regolamento.markdown
   - organigramma.markdown
   - faq.markdown
+  - servizi.markdown
 
 collections:
   authors:
