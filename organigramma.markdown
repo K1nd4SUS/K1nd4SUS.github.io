@@ -5,27 +5,27 @@ permalink: /organigramma
 ---
 ## Membri dell'Assemblea Direttiva e Referenti Gruppo Studentesco:
 - Presidente: Samuele Manclossi
-- Tesoriere e Vicepresidente: [Cristian Salvi](/author/salvi)
-- Vicepresidente: [Niccolò Volontè](/author/niccolovlnt)
-- Vicepresidente: Alessandro Mellone
-- Vicepresidente: Andrea Lunghi
+- Vicepresidente e Tesoriere: [Cristian Salvi](/author/salvi)
+- Vicepresidente con delega a Social Media: [Niccolò Volontè](/author/niccolovlnt)
+- Vicepresidente con delega ad Eventi: Alessandro Mellone
+- Vicepresidente con delega a CTF: Andrea Lunghi
 
 ## Membri fondatori
 - Edoardo Della Rossa
 - Marco Galvagni
 - Samuele Manclossi
-- Mattia Perfumo
+- [Mattia Perfumo](/author/perfumo)
 - [Tiziano Radicchi](/author/tiz314)
 - Matteo Zoia
 
 ## Amministratori
-- Delega al sito: Emma Privitera
+- Delega al sito web: Emma Privitera
 
 ## Membri onorari
-- Ex Presidente: [Mattia Perfumo](/author/perfumo)
-- Ex Vicepresidente: [Tiziano Radicchi](/author/tiz314)
-- Ex Vicepresidente: Mirco Picca
-- Ex Vicepresidente: Matteo Zoia
+- Ex Presidente A.A. 2024/2025: [Mattia Perfumo](/author/perfumo)
+- Ex Vicepresidente A.A. 2024/2025: [Tiziano Radicchi](/author/tiz314)
+- Ex Vicepresidente A.A. 2024/2025: Mirco Picca
+- Ex Vicepresidente A.A. 2024/2025: Matteo Zoia
 
 ## Membri attivi
 - [Aleksandar Ivanov](/author/ivalexev)
