@@ -60,6 +60,8 @@ header_pages:
   - organigramma.markdown
   - faq.markdown
   - servizi.markdown
+  - corsi.markdown
+  - associazioni.markdown
 
 collections:
   authors:

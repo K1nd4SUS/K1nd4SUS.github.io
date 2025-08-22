@@ -6,7 +6,9 @@ permalink: /servizi
 
 ## Servizi offerti
 
-K1nd4SUS offre una serie di servizi per agevolare e semplificare la partecipazione degli interessati alle competizioni CTF a cui il Team partecipa. Tra questi servizi, vi sono:
+K1nd4SUS offre una serie di servizi per agevolare e semplificare la partecipazione degli interessati alle competizioni CTF a cui il Team partecipa. 
+
+**Per accedere a questi servizi, puoi cliccare sui link presenti nel nostro** [LinkTree](https://links.k1nd4sus.it/)!
 
 - **LinkTree** con tutti i link utili, che raccoglie in un unico posto tutti i link ai servizi e alle risorse del Team, facilitando l'accesso a tutte le informazioni necessarie per entrare a far parte del Team e partecipare alle competizioni CTF, accessibile all'indirizzo [LinkTree](https://links.k1nd4sus.it/).
 - **Calendario** con le date delle competizioni CTF, che permette di tenere traccia degli eventi a cui il Team partecipa e di pianificare la propria partecipazione.

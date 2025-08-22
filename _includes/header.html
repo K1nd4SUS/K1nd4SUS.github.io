@@ -20,7 +20,7 @@
           <!-- Altri link -->
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title and my_page.title != "Statuto" and my_page.title != "Regolamento" and my_page.title != "Organigramma" and my_page.title != "Organizzazione" -%}
+            {%- if my_page.title and my_page.title != "Statuto" and my_page.title != "Regolamento" and my_page.title != "Organigramma" and my_page.title != "Organizzazione" and my_page.title != "Contatti"-%}
               <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
@@ -31,6 +31,7 @@
               Organizzazione
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{{ site.baseurl }}/contatti">Contatti</a></li>
               <li><a class="dropdown-item" href="{{ site.baseurl }}/statuto">Statuto</a></li>
               <li><a class="dropdown-item" href="{{ site.baseurl }}/regolamento">Regolamento</a></li>
               <li><a class="dropdown-item" href="{{ site.baseurl }}/organigramma">Organigramma</a></li>
