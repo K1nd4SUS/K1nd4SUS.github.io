@@ -1,0 +1,35 @@
+---
+interface Props {
+    text?: string;
+    textGradient?: string;
+    level?: 1 | 2 | 3;
+    className?: string;
+}
+
+const { text = "", textGradient = "", level = 1, className = "" } = Astro.props;
+
+const Tag = `h${level}`;
+---
+
+<Tag class:list={[
+    "font-extrabold text-4xl max-xl:text-3xl",
+    level === 2 && "max-md:text-3xl ",
+    level === 3 && "max-md:text-xl ",
+    "dark:text-white text-blacktext",
+    className
+]}>
+    {text && (
+        <>
+            {text}
+            {textGradient && " "}
+        </> 
+    )}
+    {textGradient && (
+        <b
+            class:list={[
+                "bg-linear-to-r from-riptide-500 to-mint-400 dark:from-riptide-500 dark:to-mint-500 text-transparent bg-clip-text",
+                level === 1 
+            ]}
+        >{textGradient}</b>
+    )}
+</Tag> 

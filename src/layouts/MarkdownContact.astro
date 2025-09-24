@@ -1,0 +1,43 @@
+---
+import Layout from "./Layout.astro";
+import Heading from "../components/ui/Heading.astro";
+import NavArticle from "../components/layout/NavArticle.astro";
+const { frontmatter } = Astro.props;
+---
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((header) => {
+      header.classList.add("scroll-m-28");
+    });
+  });
+</script>
+
+<Layout
+  pageTitle={frontmatter.title}
+  description={frontmatter.description}
+  ogimage={frontmatter.image}
+>
+  <section
+    class="w-full px-8 mt-5 max-sm:px-4 py-4 flex flex-row justify-center gap-6"
+  >
+    <div class="w-64 max-xl:hidden"></div>
+
+    <article
+      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 max-sm:mt-0 px-14 max-md:px-10 max-sm:px-6 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
+    >
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="flex gap-4 items-center">
+      <Heading text="Contact" textGradient="Us" />      
+      </div>
+
+      <div class="markdown text-white" id="content">
+        <slot />
+      </div>
+    </article>
+    <NavArticle title={frontmatter.title} />
+  </section>

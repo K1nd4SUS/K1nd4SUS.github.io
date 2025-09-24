@@ -1,0 +1,82 @@
+---
+import Event from "./Event.astro";
+import Heading from "../ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+
+const allPosts = await Astro.glob("../../pages/events/*.md");
+
+// Sort by descending date (most recent first)
+allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime(),
+);
+---
+
+<section
+  class="scroll-m-16 relative pt-8 pb-32 max-2xl:px-8 max-md:pt-4"
+  id="events"
+>
+  <div class="mx-auto max-w-7xl py-8">
+    <div class="flex gap-2 sm:gap-4 items-center justify-center text-center">
+      <Icon class="text-2xl sm:text-3xl dark:text-white text-blacktext flex-shrink-0" name="code" />
+      <Heading text="Eventi" textGradient="K!nd4SUS" level={2} />
+    </div>
+
+    <p
+      class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
+    >
+      We organize and join various <span
+        class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+        >events</span>
+        and <span
+        class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+        >initiatives</span> open to everyone, suitable for enthusiasts. Here are listed <span
+        class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+        >events</span> that have already taken place in the past, ongoing events, or future events and their related information.
+    </p>
+    <slot />
+    
+    {
+      (() => {
+        const uniqueTags = [
+          ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+        ];
+        return (
+          <div class="flex flex-wrap gap-2 justify-center my-6">
+            {uniqueTags.map((tag: string) => (
+              <a
+                href={`/events/${tag}`}
+                class="px-4 py-2 rounded-full border border-mint-400 bg-white dark:bg-mint-900/20 text-mint-600 text-sm font-bold transition duration-150 hover:scale-105"
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
+        );
+      })()
+    }
+  </div>
+
+  <div
+    id="containerEvents"
+    class="mx-auto max-w-7xl [column-count:1] md:[column-count:2] xl:[column-count:3] p-2 py-4 transition-[max-height] duration-500 ease-in-out [column-gap:1.5rem]"
+    style="masonry-auto-flow:next;"
+  >
+    {
+      allPosts.map((post) => (
+        <Event
+          class="mb-6 "
+          url={post.url}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          date={post.frontmatter.pubDate}
+          languages={post.frontmatter.languages}
+          image={post.frontmatter.image}
+          tags={post.frontmatter.tags}
+        />
+      ))
+    }
+  </div>
+
+</section>

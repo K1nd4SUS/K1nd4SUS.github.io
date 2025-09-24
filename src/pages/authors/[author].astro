@@ -1,0 +1,115 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { authors } from '../../content/authors';
+import BlogPost from '../../components/blog/BlogPost.astro';
+import { tagConfig } from '../../content/tagConfig';
+import TagIcon from "../../components/ui/TagIcon.astro";
+const { author: slug } = Astro.params;
+const author = authors.find(a => a.slug === slug);
+
+if (!author) {
+  throw new Error('Author not found');
+}
+
+export async function getStaticPaths() {
+  const { authors } = await import('../../content/authors');
+  return authors.map((author) => ({
+    params: { author: author.slug },
+  }));
+}
+
+const socialLinks = [
+  author.github && { href: author.github, label: 'GitHub', icon: '/icons/github.svg' },
+  author.linkedin && { href: author.linkedin, label: 'LinkedIn', icon: '/icons/linkedin.svg' },
+  author.telegram && { href: author.telegram, label: 'Telegram', icon: '/icons/telegram.svg' },
+  author.instagram && { href: author.instagram, label: 'Instagram', icon: '/icons/instagram.svg' },
+  author.link && { href: author.link, label: 'Website', icon: '/icons/link.svg' },
+  author.email && { href: author.email.startsWith('mailto:') ? author.email : `mailto:${author.email}`, label: 'Email', icon: '/icons/email.svg' },
+].filter(Boolean);
+---
+
+<Layout pageTitle={`K!nd4SUS | ${author.name}`}>
+  <section class="flex flex-col items-center py-10 px-4 sm:py-12">
+    <div class="flex flex-col items-center gap-3 w-full max-w-xl">
+      <h1 class="text-3xl sm:text-4xl font-black text-center flex flex-wrap gap-2 mb-1">
+        <span class="text-white">{author.name.split(' ')[0]}</span>
+        <span class="bg-gradient-to-r from-riptide-500 to-mint-500 bg-clip-text text-transparent dark:from-riptide-300 dark:to-mint-200">
+          {author.name.split(' ').slice(1).join(' ')}
+        </span>
+      </h1>
+      <div class="text-base sm:text-lg font-semibold text-white dark:text-white mb-1 text-center">@{author.username} · {author.role}</div>
+      {author.university && <div class="text-neutral-500 dark:text-neutral-400 text-sm sm:text-base mb-1 text-center">{author.university}</div>}
+      <div class="flex flex-wrap gap-2 sm:gap-3 justify-center mb-1 w-full">
+        {author.tags && author.tags.map(tag => {
+          const config = tagConfig[tag] || {};
+          return (
+            <span
+              class={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${config.bg || 'bg-mint-100 dark:bg-mint-900'} ${config.text || 'text-mint-700 dark:text-mint-200'}`}
+            >
+              <TagIcon name={tag} class="w-4 h-4 inline-block" />
+              <span>{tag}</span>
+            </span>
+          );
+        })}
+      </div>
+      <div class="flex flex-wrap gap-3 sm:gap-4 mt-2 mb-1 justify-center w-full">
+        {socialLinks.map(link => {
+          if (typeof link === 'object' && link !== null) {
+            const { href, label, icon } = link;
+            return (
+              <a href={href} target="_blank" rel="noopener noreferrer" title={label} class="group transition-transform">
+                <img src={icon} alt={label} class="w-6 h-6 sm:w-8 sm:h-8 filter invert transition-transform duration-200 group-hover:scale-125 group-hover:-rotate-12" />
+              </a>
+            );
+          }
+          return null;
+        })}
+      </div>
+      {author.bio && (
+        <p class="mt-2 text-center text-neutral-700 dark:text-neutral-300 text-sm sm:text-base max-w-xs sm:max-w-full">{author.bio}</p>
+      )}
+    </div>
+  </section>
+
+  <section class="w-full max-w-3xl mx-auto mt-4 px-2 sm:px-0">
+    <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black dark:text-white text-center">Posts</h2>
+    <div class="flex flex-col gap-4 sm:gap-6">
+      {Astro.glob && (await Astro.glob('../blog/posts/*.md')).filter(post => post.frontmatter.author === author.slug).length === 0 && (
+        <div class="text-center text-neutral-500 dark:text-neutral-400">No blog posts found for this author.</div>
+      )}
+      {(await Astro.glob('../blog/posts/*.md'))
+        .filter(post => post.frontmatter.author === author.slug)
+        .sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime())
+        .map(post => (
+          <BlogPost
+            url={post.url}
+            title={post.frontmatter.title}
+            date={post.frontmatter.pubDate}
+            tags={post.frontmatter.tags}
+            languages={post.frontmatter.languages}
+            image={post.frontmatter.image}
+          />
+        ))}
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+      .author-socials {
+        gap: 0.75rem;
+      }
+      .author-tags {
+        gap: 0.25rem;
+      }
+      .group img {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+      }
+    }
+  </style>
+</Layout>
+---
+

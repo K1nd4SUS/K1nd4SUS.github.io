@@ -1,0 +1,62 @@
+---
+import Layout from "./Layout.astro";
+import DatePub from "../components/blog/DatePub.astro";
+import Heading from "../components/ui/Heading.astro";
+import NavArticle from "../components/layout/NavArticle.astro";
+const { frontmatter } = Astro.props;
+
+---
+
+
+<Layout
+  pageTitle={`K!nd4SUS | ${frontmatter.title}`}
+  description={frontmatter.description}
+  ogimage={frontmatter.image}
+>
+  <section
+    class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6"
+  >
+    <div class="w-64 max-xl:hidden"></div>
+    <article
+      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4  dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl" 
+    >
+        
+        <DatePub date={frontmatter.pubDate} />
+
+        <Heading text={frontmatter.title} />
+        {frontmatter.tags && frontmatter.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-2">
+            {frontmatter.tags.map((tag: string) => (
+              <span class="px-3 py-1 rounded-full border border-mint-400 bg-white dark:bg-mint-900/20 text-mint-600 text-xs font-bold">{tag}</span>
+            ))}
+          </div>
+        )}
+
+      
+      </header>
+
+      <figure>
+        {
+          frontmatter.image?.url && (
+            <img
+              class="w-full rounded-xl"
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt || "Article image"}
+            />
+          )
+        }
+      </figure>
+
+      <div class="markdown " id="content">
+        <slot />
+      </div>
+      
+    </article>
+    <NavArticle title={frontmatter.title} />
+  </section>
+  <div
+    class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto"
+  >
+  
+  </div>
+</Layout>

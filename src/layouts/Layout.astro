@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
+const {
+  pageTitle = "K!nd4SUS CTF Team | UniMi",
+  description = "K!nd4SUS is the official CTF team of the University of Milan (UniMi). We participate in Capture The Flag competitions, solving challenges in various categories such as web/network security, cryptography, reverse engineering, forensics & more.",
+  ogimage = {
+    url: "/images/ICON.webp",
+    alt: "K!nd4SUS CTF Team - UniMi",
+  },
+} = Astro.props;
+
+const siteUrl = new URL(Astro.url).origin;
+const SEO = {
+  sitename: "K!nd4SUS",
+  url: siteUrl,
+  locale: "en_US",
+  author: "Emma Privitera",
+};
+---
+
+<html
+  lang="en"
+  class="dark bg-[#0E0E11] font-montserrat scroll-smooth"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <!-- Favicon for different platforms -->
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
+
+    <!-- Web manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="description" content={description} />
+    <meta name="author" content={SEO.author} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogimage.url} />
+    <meta property="og:image:alt" content={ogimage.alt} />
+    <meta property="og:url" content={SEO.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SEO.sitename} />
+    <meta property="og:locale" content={SEO.locale} />
+  
+    <meta name="theme-color" content="#0E0E11"/>
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+  </head>
+  <body class="overflow-x-hidden w-full">
+    <SpeedInsights/>
+    <Header />
+    <div class="min-h-[85vh] w-full overflow-x-hidden">
+      <slot />
+    </div>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>

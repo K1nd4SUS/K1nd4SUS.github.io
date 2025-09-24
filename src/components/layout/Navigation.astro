@@ -1,0 +1,254 @@
+---
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+
+const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
+  items: (keyof typeof menu)[];
+};
+
+const menu = {
+  about: { name: "About", path: "/about" },
+  blog: {
+    name: "Blog & Writeups",
+    path: "/blog/",
+    dropdown: [{
+      name: "Blog posts", path: "/blog/tags/blog"
+    }, {
+      name: "Writeups", path: "/blog/tags/writeup"
+    }]
+  },
+  home: { name: "Home", path: "/#home" },
+  services: { 
+    name: "Services", 
+    path: "/#services",
+    dropdown: [{
+      name: "Linktree",
+      path: "https://links.k1nd4sus.it/"
+    },
+    {
+      name: "Calendar",
+      path: "/calendar"
+    },]
+  },
+  events: { 
+    name: "Events", 
+    path: "/#events", 
+    dropdown: [{ 
+      name: "Conferences", path: "/events/conference"},
+      {name: "CTF Competitions", path: "/events/CTF"},
+      {name: "Courses", path: "/events/course"},
+      {name: "Events", path: "/events/event"},
+      ] 
+  },
+  FAQ: { name: "FAQ", path: "/FAQ"},
+  rules: { name: "Rules", path: "/rules"},
+};
+
+// Common base classes
+const baseClasses = {
+  nav: "nav-links flex w-full justify-center gap-6 max-md:gap-3 max-md:py-6",
+  link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
+  socialContainer: "flex items-center justify-center gap-5 md:hidden",
+  dropdown: "relative group flex items-center",
+  dropdownMenu:
+    "absolute left-0 top-full hidden group-hover:block bg-zinc-900 shadow-2xl rounded-xl py-3 px-2 min-w-[220px] z-50 transition-all duration-300 scale-95 group-hover:scale-100 border border-zinc-700",
+  dropdownItem:
+    "block px-5 py-2 text-base font-semibold rounded-lg transition-all duration-200 hover:bg-zinc-800 hover:text-mint-500 dark:hover:text-mint-400 hover:font-bold hover:[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]",
+} as const;
+---
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isHome = window.location.pathname === "/";
+
+    // Classes for link states
+    const linkClasses = {
+      active: [
+        "text-mint-500",
+        "dark:text-mint-400",
+        "font-bold",
+        "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]",
+      ],
+      inactive: ["dark:text-zinc-300", "text-blacktext"],
+    };
+
+  function toggleLinkClasses(link: Element, isActive: boolean) {
+      if (isActive) {
+        link.classList.add(...linkClasses.active);
+        link.classList.remove(...linkClasses.inactive);
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.classList.remove(...linkClasses.active);
+        link.classList.add(...linkClasses.inactive);
+        link.removeAttribute("aria-current");
+      }
+    }
+
+    function updateActiveLink() {
+      const currentPath = window.location.pathname;
+      const currentHash = window.location.hash
+        ? `#${window.location.hash.substring(1)}`
+        : "";
+
+      document.querySelectorAll("nav a").forEach((link) => {
+        const path = link.getAttribute("data-path");
+        toggleLinkClasses(link, path === currentPath || path === currentHash);
+      });
+    }
+
+    function setupScrollSpy() {
+      if (!isHome) return;
+
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("nav a");
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "-50% 0px",
+        threshold: 0,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute("id");
+            if (sectionId) {
+              navLinks.forEach((link) => {
+                const path = link.getAttribute("data-path");
+                toggleLinkClasses(link, path === `/#${sectionId}`);
+              });
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => observer.observe(section));
+    }
+
+    // Dropdown mobile toggle
+    document.querySelectorAll('.dropdown-toggle').forEach((btn) => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parent = btn.closest('.group');
+        if (parent) {
+          // Close all other open dropdowns first
+          document.querySelectorAll('.group.dropdown-open').forEach((openDropdown) => {
+            if (openDropdown !== parent) {
+              openDropdown.classList.remove('dropdown-open');
+            }
+          });
+          // Toggle current dropdown
+          parent.classList.toggle('dropdown-open');
+        }
+      });
+    });
+
+    // Close mobile menu when navigation link is clicked
+    function closeMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+      if (navLinks && navLinks.classList.contains('expanded')) {
+        navLinks.classList.remove('expanded');
+        if (hamburger) {
+          hamburger.classList.remove('active');
+        }
+      }
+    }
+
+    document.querySelectorAll('nav a:not(.dropdown-toggle)').forEach((link) => {
+      (link as HTMLElement).onclick = closeMobileMenu;
+    });
+    document.querySelectorAll('.dropdown-item').forEach((item) => {
+      (item as HTMLElement).onclick = closeMobileMenu;
+    });
+    window.onscroll = () => {
+      closeMobileMenu();
+    };
+    window.onresize = () => {
+      if (window.innerWidth >= 768) {
+        closeMobileMenu();
+      }
+    };
+
+    updateActiveLink();
+    setupScrollSpy();
+    window.addEventListener("hashchange", updateActiveLink); // AAAAGFHHHH
+  });
+</script>
+
+
+
+<div class="w-full flex items-center max-md:justify-between md:justify-center max-md:px-4 max-md:py-2">
+  {/* Logo always visible on mobile, left side */}
+  <a href="/" class="max-md:block md:hidden flex items-center">
+    <img src="/images/k!nd4SUSbianco.webp" alt="K!nd4SUS Logo" class="h-6 w-auto" />
+  </a>
+  {/* Navigation bar */}
+  <nav class={baseClasses.nav + ' max-md:flex-1'} role="navigation" aria-label="Main Navigation">
+    {
+      items.map((key: string) => {
+        const item = menu[key as keyof typeof menu];
+        if (!item) return null;
+
+        if ("dropdown" in item) {
+          return (
+            <div class={baseClasses.dropdown + " group max-md:flex-col max-md:w-full"}>
+              <div class="flex items-center w-full">
+                <a
+                  href={item.path}
+                  class={baseClasses.link + " flex-1"}
+                  data-path={item.path}
+                  aria-label={item.name}
+                  aria-current={
+                    item.path === Astro.url.pathname ? "page" : undefined
+                  }
+                >
+                  {item.name}
+                </a>
+                {/* Freccina solo su mobile */}
+                <button class="dropdown-toggle md:hidden px-2 py-2" aria-label="Apri menu">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class={
+                baseClasses.dropdownMenu +
+                " max-md:relative max-md:left-auto max-md:top-auto max-md:w-full max-md:rounded-none max-md:border-none max-md:shadow-none max-md:bg-transparent max-md:p-0 max-md:mt-0 max-md:z-auto" +
+                " max-md:hidden group-[.dropdown-open]:max-md:block"
+              }>
+                {item.dropdown.map((dropdownItem) => {
+                  const isExternal = dropdownItem.path.startsWith('http');
+                  return (
+                    <a
+                      href={dropdownItem.path}
+                      class={baseClasses.dropdownItem + " max-md:px-8 max-md:py-2 max-md:text-base max-md:rounded-none max-md:bg-transparent max-md:font-normal"}
+                      data-path={dropdownItem.path}
+                      aria-label={dropdownItem.name}
+                      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
+                      {dropdownItem.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        }
+
+        return (
+          <a
+            href={item.path}
+            class={baseClasses.link}
+            data-path={item.path}
+            aria-label={item.name}
+            aria-current={item.path === Astro.url.pathname ? "page" : undefined}
+          >
+            {item.name}
+          </a>
+        );
+      })
+    }
+  </nav>
+</div>

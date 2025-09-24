@@ -1,0 +1,42 @@
+{
+  "profileImage": "/images/ICON.webp",
+  "profileAlt": "K!nd4SUS",
+  "profileLink": "/about",
+  "profileTitle": "Cybersecurity CTF UniMI Team",
+  "profileName": "K!nd4SUS",
+  "portfolioImage": "/images/portfolio.webp",
+  "github": "https://github.com/k1nd4sus",
+  "githubText": "Github",
+  "email": "k1nd4susctf@gmail.com",
+  "linkedin": "https://www.linkedin.com/company/k-nd4sus/",
+  "instagram": "https://www.instagram.com/k1nd4.sus/",
+  "youtube": "https://www.youtube.com/@k1nd4sus",
+  "telegram": "https://t.me/+_l_1wvVRK0U2MGFk",
+  "telegramnews": "https://t.me/k1nd4susCTF",
+  "alias": "K!nd4SUS",
+  "contactSectionTitle": "K!nd4SUS",
+  "contactSectionSubtitle": "UniMI CTF Team",
+  "contactSectionButtonText": "Contact",
+  "contactSectionButtonIcon": "paperplane",
+  "techsTitle": "Tech",
+  "instagramIconName": "instagram",
+  "youtubeIconName": "youtube",
+  "githubIconName": "github",
+  "linkedinIconName": "linkedin",
+  "telegramIconName": "telegram",
+  "emailIconName": "envelope",
+  "hobbies": [
+    "Writing",
+    "Camping",
+    "Coffee",
+    "Music",
+    "Movies",
+    "Board Games"
+  ],
+  "pageTitle": "K!nd4SUS",
+  "pageDescription": "...",
+  "OGImage": {
+    "url": "/images/ICON_empty.webp",
+    "alt": ".."
+  }
+}

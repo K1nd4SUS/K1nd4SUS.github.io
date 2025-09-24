@@ -1,0 +1,39 @@
+{
+	"name": "K!nd4SUS CTF Team - UniMi",
+	"short_name": "K!nd4SUS",
+	"description": "K!nd4SUS is the official CTF team of the University of Milan (UniMi). We participate in Capture The Flag competitions, solving challenges in various categories such as web/network security, cryptography, reverse engineering, forensics & more.",
+	"start_url": "/",
+	"scope": "/",
+	"icons": [
+		{
+			"src": "/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		},
+		{
+			"src": "/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "image/png"
+		},
+		{
+			"src": "/favicon-32x32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/favicon-16x16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "teal",
+	"background_color": "dark blue",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"lang": "en, it"
+}

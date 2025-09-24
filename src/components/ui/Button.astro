@@ -1,0 +1,170 @@
+---
+type ButtonVariant = "default" | "big" | "dark";
+
+interface Props {
+    link: string;
+    text: string;
+    iconName?: string;
+    variant?: ButtonVariant;
+    ariaLabel?: string;
+    disabled?: boolean;
+    isLoading?: boolean;
+    isExternal?: boolean;
+    isActive?: boolean;
+    class?: string;
+}
+
+const { 
+    link, 
+    text, 
+    iconName, 
+    variant = "default", 
+    ariaLabel,
+    disabled = false,
+    isLoading = false,
+    isExternal = false,
+    isActive = false,
+    class: className = ""
+} = Astro.props as Props;
+import { Icon } from "astro-icon/components";
+
+// Common base classes for all buttons
+const baseClasses = `
+    z-2 
+    text-center 
+    cursor-pointer 
+    leading-none 
+    hover:scale-110 
+    w-fit 
+    font-medium 
+    flex 
+    gap-2 
+    transition-all 
+    ease-in-out 
+    justify-center 
+    items-center 
+    rounded-full
+    disabled:opacity-50
+    disabled:cursor-not-allowed
+    disabled:hover:scale-100
+    disabled:hover:bg-none
+    disabled:hover:shadow-none
+    aria-disabled:opacity-50
+    aria-disabled:cursor-not-allowed
+    aria-disabled:hover:scale-100
+    aria-disabled:hover:bg-none
+    aria-disabled:hover:shadow-none
+`;
+
+// Specific classes for each variant
+const variantClasses = {
+    default: `
+        text-blacktext/90 
+        dark:text-mint-50 
+        dark:hover:text-white 
+        px-6 
+        py-4 
+        max-xl:px-5 
+        max-sm:py-2 
+        max-sm:px-3 
+        text-lg 
+        max-xl:text-base 
+        max-sm:text-sm 
+        hover:bg-linear-to-l 
+        bg-linear-to-r 
+        from-riptide-300 
+        to-mint-300 
+        dark:from-riptide-500 
+        dark:to-mint-500
+    `,
+    big: `
+        font-normal 
+        gap-3 
+        max-md:gap-1 
+        text-blacktext 
+        dark:text-mint-50 
+        dark:hover:text-white 
+        px-8 
+        max-sm:py-3 
+        py-5 
+        max-xl:px-6 
+        max-sm:px-3 
+        text-2xl 
+        max-xl:text-xl 
+        max-sm:text-lg 
+        hover:bg-linear-to-l 
+        bg-linear-to-r 
+        from-riptide-200 
+        to-mint-200 
+        dark:from-riptide-500 
+        dark:to-mint-500
+    `,
+    dark: `
+        group
+        dark:text-mint-50
+        text-blacktext
+        dark:hover:text-white
+        px-6
+        py-4
+        max-xl:px-5
+        max-sm:py-2
+        max-sm:px-3
+        text-lg
+        max-xl:text-base
+        max-sm:text-sm
+        dark:bg-zinc-900/60
+        border-2
+        border-teal-400
+        dark:border-mint-300
+        shadow-md
+        dark:hover:border-mint-300
+        backdrop-blur-md
+        transition-all
+    `,
+};
+
+// Icon classes for each variant
+const iconClasses = {
+    default: "size-5",
+    big: "size-5",
+    dark: "size-5 dark:text-mint-300 text-blacktext group-hover:text-blacktext dark:group-hover:text-white transition-colors",
+};
+
+// Combine base classes with variant-specific classes
+const buttonClasses = `${baseClasses} ${variantClasses[variant]}`;
+
+// Generate aria-label if not provided
+const buttonAriaLabel = ariaLabel || (iconName ? `${text} ${iconName}` : text);
+
+// Determine if it's an external link
+const isExternalLink = isExternal || link.startsWith('http');
+
+// Additional attributes for external links
+const externalAttributes = isExternalLink ? {
+    target: '_blank',
+    rel: 'noopener noreferrer'
+} : {};
+
+// Loading state
+const loadingText = isLoading ? 'Loading...' : text;
+const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Loading` : buttonAriaLabel;
+---
+
+<div
+    class="w-fit h-fit p-px rounded-full"
+>
+    <a 
+        class:list={[buttonClasses, className]} 
+        href={disabled ? '#' : link}
+        aria-label={loadingAriaLabel}
+        role="button"
+        aria-disabled={disabled}
+        aria-busy={isLoading}
+        aria-pressed={isActive}
+        {...externalAttributes}
+    >
+        {iconName && <Icon name={iconName} class={iconClasses[variant]} aria-hidden="true" />}
+        {isLoading && <Icon name="mdi:loading" class="animate-spin" aria-hidden="true" />}
+        {loadingText}
+    </a>
+</div>

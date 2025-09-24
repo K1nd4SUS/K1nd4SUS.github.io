@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { tweetText, currentUrl } = Astro.props;
+
+const shareLinks = [
+  {
+    name: "Twitter",
+    icon: "twitter",
+    href: `https://twitter.com/intent/tweet?text=${tweetText}&url=${currentUrl}`,
+  },
+  {
+    name: "Facebook",
+    icon: "facebook",
+    href: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
+  },
+  {
+    name: "WhatsApp",
+    icon: "whatsapp",
+    href: `https://api.whatsapp.com/send?text=${encodeURIComponent(`${currentUrl}`)}`,
+  },
+];
+---
+
+<div class="flex items-center gap-5 text-lg" role="group" aria-label="Share on social media">
+  <span class="text-base font-bold text-blacktext dark:text-white">Share </span>
+  {
+    shareLinks.map((link) => (
+      <a
+        href={link.href}
+        class="bg-blacktext rounded-full p-2"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Share on ${link.name}`}
+        title={`Share on ${link.name}`}
+      >
+        <Icon name={link.icon} />
+      </a>
+    ))
+  }
+</div>

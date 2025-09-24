@@ -1,0 +1,48 @@
+---
+import Navigation from "./Navigation.astro";
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+
+const currentPath = Astro.url.pathname;
+const routes = ["/", "/home", "/about"];
+
+// Check if the current route is in the list of routes
+const isActiveRoute = routes.includes(currentPath);
+
+const navItems = isActiveRoute
+  ? ["home", "services", "events", "about", "rules", "blog", "FAQ"]
+  : ["home", "services", "events", "about", "rules", "blog", "FAQ"];
+---
+
+<header
+  role="banner"
+  aria-label="Main navigation"
+  class="border-b border-zinc-800 dark:border-zinc-800 sticky top-0 z-50 w-full p-4 font-medium text-blacktext dark:text-zinc-300 bg-white/40 dark:bg-[#0E0E11]/40 backdrop-blur-md shadow-none max-md:z-50 max-md:px-0 transition-all"
+>
+  <div
+    class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6"
+  >
+
+    <Navigation items={navItems} />
+
+    <div class="flex items-center justify-between gap-5 text-xl"></div>
+    <div class="flex items-center gap-5 text-xl md:pl-5">
+      <button
+        class="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="bars" class="hamburger-icon bars-icon" aria-hidden="true" />
+        <Icon
+          name="xmark"
+          class="hamburger-icon xmark-icon"
+          aria-hidden="true"
+        />
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,89 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="max-xl:hidden  ">
+  <div id="nav-content" class="fixed right-0 top-14 w-72 bg-white dark:bg-transparent sticky mt-8 rounded-2xl dark:border-0 border border-neutral-100 top-14 max-h-[calc(100svh-3.5rem)] overflow-x-hidden px-6 pt-8 pb-12">
+    <div class="flex flex-col gap-4 pl-0">
+      <div>
+        <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-md uppercase">Contents</h3>
+      </div>
+      <div class="flex flex-col gap-2 pr-6 text-neutral-500 dark:text-neutral-300 ">
+        <ul id="toc-list" class="leading-loose text-base gap-2 border-l dark:border-neutral-500/20 border-blacktext/20">
+          <li class="leading-loose">
+            <a class="inline-block leading-5 pl-4 font-bold text-white border-l dark:border-white border-blacktext dark:hover:border-white hover:border-blacktext" href="#">{title}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tocList = document.getElementById("toc-list");
+    const content = document.getElementById("content");
+
+    if (!tocList || !content) return;
+
+    const headers = content.querySelectorAll("h2, h3");
+    let currentUl = tocList;
+
+    headers.forEach((header, index) => {
+      if (!header.id) {
+        header.id = header.textContent?.trim().toLowerCase().replace(/\s+/g, "-") + "-" + index;
+        // 👈 Add the class
+      }
+
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `#${header.id}`;
+      link.textContent = header.textContent?.trim() || header.id;
+
+      // If the header is H2, keep pl-6, and if it's H3, use pl-12
+      link.classList.add("inline-block","leading-5", "hover:text-mint-400", "py-2", "border-l", "border-transparent", "dark:hover:border-white","hover:border-blacktext");
+      link.classList.add(header.tagName === "H2" ? "pl-6" : "pl-12");
+      li.appendChild(link);
+
+      if (header.tagName === "H2") {
+        currentUl = document.createElement("ul");
+        currentUl.classList.add("border-neutral-400","dark:hover:border-white","hover:border-blacktext",  "pl-0");
+        const h2Li = document.createElement("li");
+        h2Li.appendChild(link);
+        h2Li.appendChild(currentUl);
+        tocList.appendChild(h2Li);
+      } else {
+        currentUl.appendChild(li);
+      }
+
+      // Smooth scroll when clicking on a link
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById(header.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    // 👇 Detect the active header
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id");
+          const link = document.querySelector(`a[href="#${id}"]`);
+
+          if (entry.isIntersecting) {
+            // Remove class from all and add only to the active one
+            document.querySelectorAll("#toc-list a").forEach((el) => {
+              el.classList.remove("font-semibold", "dark:text-mint-300!", "text-blacktext!", "dark:border-white!", "border-blacktext!"  );
+              el.classList.add("dark:text-neutral-300","text-neutral-500" );
+            });
+
+            link?.classList.add("font-semibold", "dark:text-mint-300!", "text-blacktext!",   "border-l", "dark:border-white!", "border-blacktext!");
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -65% 0px", threshold: 0.1 } // Adjusted to improve visibility
+    );
+
+    headers.forEach((header) => observer.observe(header));
+  });
+</script>

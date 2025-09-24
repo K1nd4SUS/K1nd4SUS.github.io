@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Event from "../../components/home/Event.astro";
+import Heading from "../../components/ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const allPosts: any[] = await Astro.glob("../events/*.md");
+  const uniqueTags: string[] = [
+    ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+  ];
+  return uniqueTags.map((tag: string) => {
+    const filteredPosts = allPosts
+      .filter((post: any) => post.frontmatter.tags.includes(tag))
+      .sort((a: any, b: any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout pageTitle={`K!nd4SUS | ${tag.charAt(0).toUpperCase() + tag.slice(1)}` }>
+<section class="scroll-m-16 relative pt-8 pb-32 max-2xl:px-8 max-md:pt-4" id="events">
+  <div class="mx-auto max-w-7xl py-8">
+    <div class="flex gap-4 items-center justify-center text-center ">
+      <Heading text={`${tag.charAt(0).toUpperCase() + tag.slice(1)}`} textGradient="K!nd4SUS" level={2} />
+    </div>
+    <p class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium">
+      All our events tagged as <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200">{tag}</span>.
+    </p>
+  </div>
+  <div
+    id="containerEvents"
+    style="column-count: 1; column-gap: 1.5rem; masonry-auto-flow: next;"
+    class="mx-auto max-w-7xl p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
+  >
+    {posts.length === 0 ? (
+      <div class="text-center text-lg text-gray-400 py-10">No event found for this tag!</div>
+    ) : (
+      posts.map((post) => (
+        <Event
+          class="mb-6"
+          url={post.url}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          date={post.frontmatter.pubDate}
+          languages={post.frontmatter.languages}
+          image={post.frontmatter.image}
+          tags={post.frontmatter.tags}
+        />
+      ))
+    )}
+  </div>
+</section>
+
+<style>
+  /* Use direct CSS media queries instead of Tailwind for more reliable columns */
+  @media (min-width: 768px) {
+    #containerEvents {
+      column-count: 2 !important;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    #containerEvents {
+      column-count: 3 !important;
+    }
+  }
+</style>
+</Layout>

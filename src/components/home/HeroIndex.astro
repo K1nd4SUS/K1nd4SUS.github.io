@@ -1,0 +1,238 @@
+---
+
+import Button from "../ui/Button.astro";
+import Heading from "../ui/Heading.astro";
+import { getCollection } from "astro:content";
+import { teamMembers } from "../../content/teamMembers";
+import { authors } from "../../content/authors";
+import { tagConfig } from "../../content/tagConfig";
+import TagIcon from "../ui/TagIcon.astro";
+import { Icon } from "astro-icon/components"
+
+const [staticData] = await getCollection("staticData");
+const {
+  profileAlt,
+  profileLink,
+  profileImage,
+} = staticData.data;
+---
+
+<section
+  class="scroll-m-16 px-8 max-sm:px-4 py-8"
+  id="home"
+  aria-label="Introduction, events, people"
+>
+  <div
+  class="mx-auto h-96 w-full max-w-7xl rounded-2xl bg-white/40 dark:bg-[#0E0E11]/40 border border-zinc-800 dark:border-zinc-800
+  backdrop-blur-md max-md:h-auto "
+  >
+    <div
+  class="group relative z-0 flex h-full items-center justify-center gap-8 
+  overflow-hidden rounded-2xl bg-transparent p-4 transition-all  
+  max-md:w-full max-md:gap-3 max-lg:gap-2 max-sm:flex-col"
+    >
+      <div class="aspect-square h-4/5 max-md:size-32">
+        <div
+          class="relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full p-[2px] transition-all duration-500"
+        >
+          <div
+            class="absolute inset-0 h-full w-full rounded-full from-transparent to-riptide-500 dark:from-transparent f dark:to-mint-300 border-[6px] border border-mint-500"
+          >
+          </div>
+          <div class="relative z-20 flex w-full rounded-full bg-mint-900">
+            <div
+              class="w-full aspect-square rounded-full bg-center bg-cover"
+              style={`background-image: url(${profileImage})`}
+              aria-label={profileAlt}
+            >
+              <a
+                href={profileLink}
+                class="flex h-full w-full"
+                aria-label="About"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex h-full w-7/12 flex-col justify-center gap-4 p-4 max-md:w-full max-md:gap-2">
+        <h1
+          class="text-4xl font-black leading-none text-blacktext dark:text-white max-xl:text-3xl max-lg:text-2xl max-sm:text-center"
+        > K!nd4SUS</h1>
+  <p class="mb-0 text-lg font-semibold leading-8 text-blacktext dark:text-gray-200 max-xl:text-base max-sm:text-center">
+          <span
+            class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+            > K!nd4SUS </span> (/ˈkaɪndə sʌs/) è la squadra di CTF players dell'<span
+            class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+            >Università degli Studi di Milano (UniMi)</span
+          >, di cui fanno parte appassionati di cybersecurity e informatica.
+        </p>
+
+  <div class="flex gap-4 items-start justify-start max-sm:flex-row max-sm:justify-center max-sm:items-center">
+          <Button
+            link=https://links.k1nd4sus.it/
+            text=Linktree
+            iconName="code"
+            variant="dark"
+          />
+          <Button
+            link={profileLink}
+            text="About"
+            iconName="info"
+            variant="dark"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="scroll-m-16 px-8 max-sm:px-4 py-8" id="team" aria-label="Team members">
+  <div class="mx-auto w-full max-w-7xl">
+    <div class="flex gap-4 items-center justify-center mb-15">
+      <Heading text="K!nd4SUS" textGradient="Team" level={2} />
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {teamMembers.map((member) => {
+        const author = authors.find(a => a.name === member.name);
+        const cardContent = (
+          <>
+            <div class="flex-1 flex flex-col items-start gap-3">
+              <div class="text-lg font-semibold text-blacktext dark:text-white member-name">{member.name}</div>
+              {member.username && (
+                <div class="text-xs text-gray-500 dark:text-gray-400 -mt-2 mb-1">@{member.username} · {member.role}</div>
+              )}
+              <div class="text-sm text-gray-600 dark:text-gray-300 mb-2">{member.university}</div>
+              <div class="flex flex-wrap gap-1 mt-2">
+                {member.tags.map((tag) => {
+                  const conf = tagConfig[tag] ?? { bg: 'bg-gray-200', text: 'text-gray-700', icon: '', name: tag };
+                  return (
+                    <span class={`flex items-center gap-0.5 px-2 py-1 rounded-lg ${conf.bg} ${conf.text} text-xs font-bold`}>
+                      {conf.icon && <TagIcon name={conf.icon} class="w-4 h-4" />}
+                      {conf.name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 items-center justify-start min-w-[32px] ml-2 mt-1">
+              {member.github && (
+                <a href={member.github} target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <img src="/icons/github.svg" alt="GitHub" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.linkedin && (
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.telegram && (
+                <a href={member.telegram} target="_blank" rel="noopener noreferrer" title="Telegram">
+                  <img src="/icons/telegram.svg" alt="Telegram" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.instagram && (
+                <a href={member.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+                  <img src="/icons/instagram.svg" alt="Instagram" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.email && (
+                <a href={`mailto:${member.email}`} title="Email">
+                  <img src="/icons/email.svg" alt="Email" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.link && (
+                <a href={member.link} target="_blank" rel="noopener noreferrer" title="Website">
+                  <img src="/icons/link.svg" alt="Website" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+            </div>
+          </>
+        );
+        return (
+          <div class="rounded-2xl bg-white/40 dark:bg-[#0E0E11]/40 border border-zinc-800 dark:border-zinc-800 p-6 flex flex-row items-start gap-3 backdrop-blur-md transition-transform duration-300 ease-in-out hover:scale-105 group" style="position:relative;">
+            {author ? (
+              <a
+                href={`/authors/${author.slug}/`}
+                aria-label={`Vai alla pagina autore di ${member.name}`}
+                style="position:absolute;inset:0;z-index:10;"
+                tabindex="-1"
+                onclick={(e) => {
+                  const path = (e.composedPath ? e.composedPath() : (e as any).path || []) as Array<HTMLElement>;
+                  if (path.some((el: HTMLElement) => el && el.classList && el.classList.contains('member-social-link'))) {
+                    e.preventDefault();
+                  }
+                }}
+              ></a>
+            ) : null}
+            {/* Card content, with social icons marked for priority */}
+            <div class="flex-1 flex flex-col items-start gap-3">
+              <div class="text-lg font-semibold text-blacktext dark:text-white member-name">{member.name}</div>
+              {member.username && (
+                <div class="text-xs text-gray-500 dark:text-gray-400 -mt-2 mb-1">@{member.username} · {member.role}</div>
+              )}
+              <div class="text-sm text-gray-600 dark:text-gray-300 mb-2">{member.university}</div>
+              <div class="flex flex-wrap gap-1 mt-2">
+                {member.tags.map((tag) => {
+                  const conf = tagConfig[tag] ?? { bg: 'bg-gray-200', text: 'text-gray-700', icon: '', name: tag };
+                  return (
+                    <span class={`flex items-center gap-0.5 px-2 py-1 rounded-lg ${conf.bg} ${conf.text} text-xs font-bold`}>
+                      {conf.icon && <TagIcon name={conf.icon} class="w-4 h-4" />}
+                      {conf.name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 items-center justify-start min-w-[32px] ml-2 mt-1 z-20" style="position:relative;">
+              {member.github && (
+                <a href={member.github} target="_blank" rel="noopener noreferrer" title="GitHub" class="member-social-link">
+                  <img src="/icons/github.svg" alt="GitHub" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.linkedin && (
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn" class="member-social-link">
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.telegram && (
+                <a href={member.telegram} target="_blank" rel="noopener noreferrer" title="Telegram" class="member-social-link">
+                  <img src="/icons/telegram.svg" alt="Telegram" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.instagram && (
+                <a href={member.instagram} target="_blank" rel="noopener noreferrer" title="Instagram" class="member-social-link">
+                  <img src="/icons/instagram.svg" alt="Instagram" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.email && (
+                <a href={`mailto:${member.email}`} title="Email" class="member-social-link">
+                  <img src="/icons/email.svg" alt="Email" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+              {member.link && (
+                <a href={member.link} target="_blank" rel="noopener noreferrer" title="Website" class="member-social-link">
+                  <img src="/icons/link.svg" alt="Website" class="w-5 h-5 filter invert icon-hover-effect" />
+                </a>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .icon-hover-effect {
+    transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+  .icon-hover-effect:hover {
+    transform: scale(1.25) rotate(-12deg);
+  }
+  .group:hover .member-name {
+    color: #1CF1FB !important;
+    transition: color 0.18s cubic-bezier(0.4,0,0.2,1);
+  }
+</style>

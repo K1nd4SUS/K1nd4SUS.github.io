@@ -1,0 +1,51 @@
+---
+const allTools = [
+  "html",
+  "javascript",
+  "ts",
+  "angular",
+  "astro",
+  
+  "node",
+
+  "css",
+  "tailwind",
+  "sass",
+  "bootstrap",
+
+  "mongo",
+  "firebase",
+  "mysql",
+
+  "cloudflare",
+
+  "figma",
+  "vercel",
+  "netlify",
+  
+  "git",
+  "markdown",
+
+  "php",
+  "wordpress",
+];
+
+import Capsule from "../ui/Capsule.astro";
+
+type ToolVariant = "default" | "center";
+
+const baseClasses = "flex flex-wrap gap-4 max-lg:gap-1 grid-auto-efe";
+
+const variantClasses: Record<ToolVariant, string> = {
+  default: "cursor-default",
+  center: "justify-center cursor-default",
+};
+
+const { variant = "default", linkEnabled = false, size = "md" } = Astro.props;
+
+const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
+---
+
+<div class={classes}>
+  {allTools.map((tool) => <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />)}
+</div>

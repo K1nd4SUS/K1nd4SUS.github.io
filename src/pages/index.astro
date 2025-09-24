@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Service from "../components/home/Service.astro";
+import HeroIndex from "../components/home/HeroIndex.astro";
+import ListEvents from "../components/home/ListEvents.astro";
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+const { pageTitle, pageDescription, OGImage } = staticData.data;
+---
+
+<Layout
+  pageTitle={pageTitle}
+  description={pageDescription}
+  ogimage={{ alt: OGImage.alt, url: OGImage.url }}
+>
+  <HeroIndex />
+  <Service />
+  <ListEvents />
+</Layout>
