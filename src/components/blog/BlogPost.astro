@@ -1,0 +1,45 @@
+---
+const { title, url, date, image, tags = [], languages = [] } = Astro.props;
+
+import Tag from "../ui/Tag.astro";
+import ReadMore from "../ui/ReadMore.astro";
+import DatePub from "./DatePub.astro";
+import Capsule from "../ui/Capsule.astro";
+import TagIcon from "../../components/ui/TagIcon.astro";
+import { tagConfig } from '../../content/tagConfig';
+
+---
+
+<article class="bg-white/90 dark:bg-zinc-900/60 border border-neutral-200 dark:border-zinc-800 hover:border-mint-400 transition-all duration-200 ease-in-out p-7 max-md:p-5 w-full flex flex-row items-start gap-7 max-md:gap-4 rounded-2xl max-md:flex-col-reverse shadow-md hover:shadow-lg">
+    <div class="flex flex-col flex-1 min-w-0">
+        <a href={url} class="flex flex-col gap-4 w-full">
+            <DatePub date={date} />
+            <h2 class="dark:text-mint-50 text-blacktext text-3xl font-bold text-pretty">{title}</h2>
+            <ReadMore />
+        </a>
+        <div class="gap-3 mt-3 flex flex-col">
+            <div class="flex gap-2 flex-wrap">
+              
+                 {languages.length > 0 && languages.map((language: string) => <Capsule lang={language} />)} 
+            </div>
+                        <div class="gap-2 flex flex-wrap justify-start items-center">
+                                {tags.length > 0 && tags.map((tag: string) => {
+                                    const config = tagConfig[tag] || {};
+                                    const isCustom = !!tagConfig[tag];
+                                    return (
+                                        <a
+                                            href={`/blog/tags/${encodeURIComponent(tag)}`}
+                                            class={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold ${config.bg || 'bg-mint-100 dark:bg-mint-900'} ${config.text || 'text-mint-700 dark:text-mint-200'} ${!isCustom ? 'transition-all duration-300 hover:bg-gradient-to-r hover:from-riptide-200 hover:to-mint-300 hover:text-neutral-900 hover:shadow-lg dark:hover:from-riptide-400 dark:hover:to-mint-200 dark:hover:text-zinc-900' : ''}`}
+                                        >
+                                            <TagIcon name={tag} class="w-5 h-5 inline-block" />
+                                            {tag}
+                                        </a>
+                                    );
+                                })}
+                        </div>
+        </div>
+    </div>
+    {image?.url && (
+        <a href={url} style={{ backgroundImage: `url(${image.url})` }} class="shrink-0 rounded-2xl bg-center bg-cover aspect-video max-md:aspect-video w-2/6 max-md:w-full" />
+    )}
+</article>

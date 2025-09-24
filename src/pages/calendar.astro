@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout
+    pageTitle="K!nd4SUS | Calendar"
+    description="Event calendar for K!nd4SUS team activities and competitions"
+>
+  <slot class="min-h-screen flex flex-col items-center justify-center from-zinc-900 via-zinc-800 to-zinc-900 px-4 pt-40 pb-10" style="margin-top:4rem;">
+  <div class="w-full flex flex-col items-center justify-center mt-13">
+      <h1 class="w-full text-4xl md:text-5xl font-extrabold mb-10 mt-4 text-transparent bg-clip-text bg-gradient-to-r from-mint-400 via-mint-500 to-mint-600 text-center drop-shadow-lg">
+        K!nd4SUS <span class="bg-gradient-to-r from-mint-400 via-mint-500 to-mint-600 text-transparent bg-clip-text">Calendar</span>
+      </h1>
+      <p class="text-center text-lg text-gray-300 mb-4 font-medium">Add it to your Google Calendar! Click <a href="https://calendar.google.com/calendar/r?cid=5eb9beffb92ab4a091eb068474ac496f6e0a3b30785a97dfde0489b36e368385%40group.calendar.google.com" class="text-mint-400 hover:underline">here</a>.</p>
+  <div class="w-full max-w-3xl mx-auto flex flex-col items-center justify-center max-md:px-4">
+        <div class="w-full mt-6 rounded-2xl shadow-2xl overflow-hidden flex justify-center">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=5eb9beffb92ab4a091eb068474ac496f6e0a3b30785a97dfde0489b36e368385%40group.calendar.google.com&ctz=Europe%2FRome"
+            style="border:0;width:100%;min-height:500px;height:60vh;"
+            frameborder="0"
+            scrolling="no"
+            title="Calendario Team"
+            loading="lazy"
+            class="bg-zinc-900"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+</slot>
+</Layout>

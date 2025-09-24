@@ -1,0 +1,13 @@
+---
+const { tag, forceDark = false } = Astro.props;
+---
+
+<a
+  href={`/blog/tags/${tag}`}
+  class={`max-md:text-xs text-sm font-medium ${forceDark ? 
+  'text-neutral-400 bg-zinc-800' : 'text-zinc-500 dark:text-neutral-400 hover:text-blacktext'} 
+  transition-all ease-in-out duration-300 px-4 py-1 max-md:px-3 rounded-full ${forceDark ? 
+  'bg-zinc-800' : 'bg-mint-950/5 dark:bg-zinc-800 hover:bg-mint-200'}`}
+>
+  {tag}
+</a>

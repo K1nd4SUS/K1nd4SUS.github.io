@@ -1,0 +1,53 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Tags from "../../../components/blog/Tags.astro";
+import ListPosts from "../../../components/blog/ListPosts.astro";
+const pageTitle = "K!nd4SUS";
+const description = "Cybersecurity CTF UniMI Team";
+const ogimage = {
+  url: "/images/LOGOOrizzontale_PNG.webp",
+  alt: "K!nd4SUS",
+};
+const currentUrl = `${Astro.site}${Astro.url.pathname}`;
+const tweetText = encodeURIComponent(`"${pageTitle}"`);
+import Heading from "../../../components/ui/Heading.astro";
+import Share from "../../../components/ui/Share.astro";
+
+import Languages from "../../../components/blog/Languages.astro";
+---
+
+<Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
+  <div class="relative mx-auto max-w-7xl px-8 max-sm:px-4 gap-6">
+    <div
+      class="grid my-8 grid-cols-3 grid-rows-1 max-lg:grid-cols-1 max-lg:grid-rows-[1fr_auto] gap-12 max-md:gap-4"
+    >
+      <div class="lg:col-span-2">
+        <ListPosts all={true} />
+      </div>
+
+      <div class="lg:col-start-3">
+        <div
+          class="bg-white dark:bg-transparent w-full mt-0 rounded-2xl dark:border-0 border border-neutral-100 top-14 px-6 pt-8 pb-12"
+        >
+          <div class="flex flex-col gap-4 pl-0">
+            <Heading textGradient="Categories" />
+            <Tags variant="compact" />
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-transparent w-full mt-8 rounded-2xl dark:border-0 border border-neutral-100 top-14 px-6 pt-8 pb-12"
+        >
+          <div class="flex flex-col gap-4 pl-0">
+            <Heading textGradient="Languages" level={2} />
+            <Languages level={2} />
+          </div>
+        </div>
+        <div class="my-8 flex justify-end">
+          <Share currentUrl={currentUrl} tweetText={tweetText} />
+        </div>
+      </div>
+    </div>
+</div>
+
+</Layout>

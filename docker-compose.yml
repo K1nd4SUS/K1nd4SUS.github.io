@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  astro-app:
+    build: .
+    container_name: astro-app
+    ports:
+      - "4321:4321"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4321
+    restart: unless-stopped

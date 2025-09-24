@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  info: string;
+  description: string;
+}
+
+const { title, info, description } = Astro.props;
+---
+
+<div
+  class="relative mx-12 grid md:grid-cols-5 md:gap-10 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 
+  before:border-black/20 dark:before:border-white/15 before:content-['']"
+>
+  <div class="pb-5 md:col-span-2">
+    <div class="sticky top-0">
+      <span
+        class="absolute -left-[42px] text-5xl text-mint-400 rounded-full drop-shadow-[0px_0px_8px_rgba(0,255,94,1)]"
+        >&bull;</span
+      >
+      <h3
+        
+        class="text-xl font-bold text-mint-400"
+      >
+        {title}
+      </h3>
+      <h4 class="text-l font-semibold text-zinc-600 dark:text-white">
+        {info}
+      </h4>
+    </div>
+  </div>
+  <div
+    class="flex flex-col gap-2 pb-4 text-zinc-00 dark:text-zinc-300 md:col-span-3"
+  >
+    <span set:html={description} />
+  </div>
+</div>

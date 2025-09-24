@@ -1,0 +1,131 @@
+---
+import Button from "../ui/Button.astro";
+import LastPost from "../blog/LastPost.astro";
+import Languages from "../blog/Languages.astro";
+import { Icon } from "astro-icon/components";
+import Heading from "../ui/Heading.astro";
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+const {
+  techsTitle,
+  github,
+  githubText,
+  profileAlt,
+  profileImage,
+  profileLink,
+  profileTitle,
+  profileName,
+} = staticData.data;
+---
+
+<section class="py-8 px-8 max-sm:px-4 max-sm:py-2">
+  <div
+    class="grid md:grid-cols-4 md:grid-rows-2 gap-4 max-sm:gap-3 grid-cols-2 grid-rows-4 max-w-7xl mx-auto max-md:h-[80vh] max-sm:h-auto max-sm:grid-rows-[auto_200px_auto_auto] max-xl:h-[550px] xl:h-[700px] min-h-[400px] sm:min-h-[450px]"
+  >
+    <div class="md:col-span-2 md:row-span-2 col-span-2 row-span-2 bg-conic/[from_var(--border-angle)] dark:from-mint-200/30 dark:via-mint-500 dark:to-mint-200/20 from-mint-300/30 via-mint-500 to-mint-300/20 from-20% to-80% animate-rotate-border rounded-2xl p-[.2rem] flex items-stretch overflow-hidden w-full">
+      <LastPost class="w-full" />
+    </div>
+    <div class="md:col-span-2 md:row-span-2 col-span-2 row-span-2 grid grid-cols-2 grid-rows-2 gap-4 sm:grid-auto-rows-min">
+      {/* Github */}
+      <div class="rounded-2xl min-w-[150px] bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(15, 78, 98,0.4)] z-40">
+        <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900 min-h-[100px]">
+          <div class="relative h-full w-full overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent">
+            <a
+              target="_blank"
+              href={github}
+              aria-label="View this site's code repository on GitHub"
+              class="group"
+            >
+              <div class="relative flex h-full min-h-[110px] flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,#1CF1FB_0,#07343a_100%)] before:bg-[radial-gradient(circle,#1CF1FB_0,#b3fafd_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10">
+                <div class="z-2">
+                  <Heading text="Github" level={3} />
+                </div>
+                <Icon
+                  class="absolute -bottom-10 left-30 size-50 text-mint-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 ease-in-out max-sm:left-10 max-md:left-30 xl:size-56 xl:-bottom-5 xl:-right-24"
+                  name="github"
+                  aria-hidden="true"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Telegram */}
+      <div class="rounded-2xl min-w-[150px] bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(15, 78, 98,0.4)] z-40">
+        <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900 min-h-[100px]">
+          <div class="relative h-full w-full overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent">
+            <a
+              target="_blank"
+              href="https://t.me/+_l_1wvVRK0U2MGFk"
+              aria-label="View this site's Telegram"
+              class="group"
+            >
+              <div class="relative flex h-full min-h-[110px] flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,#1CF1FB_0,#07343a_100%)] before:bg-[radial-gradient(circle,#1CF1FB_0,#b3fafd_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10">
+                <div class="z-2">
+                  <Heading text="Telegram" level={3} />
+                </div>
+                <Icon
+                  class="absolute -bottom-10 left-30 size-50 text-mint-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 ease-in-out max-sm:left-10 max-md:left-30 xl:size-56 xl:-bottom-5 xl:-right-24"
+                  name="telegram"
+                  aria-hidden="true"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Instagram (placeholder) */}
+      <div class="rounded-2xl min-w-[150px] bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(15, 78, 98,0.4)] z-40">
+        <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900 min-h-[100px]">
+          <div class="relative h-full w-full overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/k1nd4.sus/"
+              aria-label="View this site's Instagram profile"
+              class="group"
+            >
+              <div class="relative flex h-full min-h-[110px] flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,#1CF1FB_0,#07343a_100%)] before:bg-[radial-gradient(circle,#1CF1FB_0,#b3fafd_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10">
+                <div class="z-2">
+                  <Heading text="Instagram" level={3} />
+                </div>
+                <Icon
+                  class="absolute -bottom-10 left-30 size-50 text-mint-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 ease-in-out max-sm:left-10 max-md:left-30 xl:size-56 xl:-bottom-5 xl:-right-24"
+                  name="instagram"
+                  aria-hidden="true"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* LinkedIn (placeholder) */}
+      <div class="rounded-2xl min-w-[150px] bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(15, 78, 98,0.4)] z-40">
+        <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900 min-h-[100px]">
+          <div class="relative h-full w-full overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/k-nd4sus/"
+              aria-label="View this site's LinkedIn profile"
+              class="group"
+            >
+              <div class="relative flex h-full min-h-[110px] flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,#1CF1FB_0,#07343a_100%)] before:bg-[radial-gradient(circle,#1CF1FB_0,#b3fafd_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10">
+                <div class="z-2">
+                  <Heading text="LinkedIn" level={3} />
+                </div>
+                <Icon
+                  class="absolute -bottom-10 left-30 size-50 text-mint-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 ease-in-out max-sm:left-10 max-md:left-30 xl:size-56 xl:-bottom-5 xl:-right-24"
+                  name="linkedin"
+                  aria-hidden="true"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

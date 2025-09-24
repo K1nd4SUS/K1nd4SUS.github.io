@@ -1,0 +1,75 @@
+---
+import Social from "../ui/Social.astro";
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+const {
+  github,
+  alias,
+  instagram,
+  email,
+  youtube,
+  linkedin,
+  emailIconName,
+  youtubeIconName,
+  linkedinIconName,
+  instagramIconName,
+  githubIconName,
+} = staticData.data;
+---
+
+<footer
+  class="relative bottom-0 w-full px-4 py-8 font-medium text-blacktext dark:bg-transparent dark:border-b-2 dark:border-zinc-800 dark:text-zinc-300 max-lg:mt-3"
+  role="contentinfo"
+  aria-label="Footer"
+>
+  <nav
+    class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 text-xl max-xl:px-6 max-sm:flex-col"
+    aria-label="Footer navigation"
+  >
+    <div
+      class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1 hover:text-mint-500 transition-all [text-shadow:0_1px_2px_#000]"
+    >
+      <a href="/#home" aria-label="Home">
+      <img src="/images/k!nd4SUSbianco_orizzontale.webp" alt="K!nd4SUS" class="h-6" />
+      </a>
+    </div>
+    <div class="text-center max-sm:text-[10px]">
+      <a
+        class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-[11px]"
+        aria-label="Privitorta">UniMi © 2025 K!nd4SUS <Icon name="code" aria-hidden="true"/>powered by Privitorta</a>
+    </div>
+    <div
+      class="flex items-center justify-center gap-5"
+      role="group"
+      aria-label="Social media links"
+    >
+      <Social
+        link={`mailto:${email}`}
+        iconName={emailIconName}
+        label={`Send email to ${email}`}
+      />
+      <Social
+        link={instagram}
+        iconName={instagramIconName}
+        label={`Visit ${alias} on Instagram`}
+      />
+      <Social
+        link={youtube}
+        iconName={youtubeIconName}
+        label={`Visit ${alias} on YouTube`}
+      />
+      <Social
+        link={github}
+        iconName={githubIconName}
+        label={`Visit ${alias} on GitHub`}
+      />
+      <Social
+        link={linkedin}
+        iconName={linkedinIconName}
+        label={`Visit ${alias} on LinkedIn`}
+      />
+    </div>
+  </nav>
+</footer>
