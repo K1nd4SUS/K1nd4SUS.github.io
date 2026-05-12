@@ -8,113 +8,104 @@ image:
   alt: "K!nd4SUS CTF Team"
 ---
 
-The K!nd4SUS Cybersecurity Team is the Italian CTF player team of the [University of Milan](https://www.unimi.it/) (UniMi), made up of cybersecurity enthusiasts and those passionate about everything related to computer science.
+Il K!nd4SUS Cybersecurity Team è la squadra italiana di CTF player dell'[Università degli Studi di Milano](https://www.unimi.it/) (UniMi), composta da appassionati di cybersecurity e di tutto ciò che riguarda l'informatica. <br>
+L'origine dei K!nd4SUS risale al 2021 quando un gruppetto di persone, a seguito del progetto [CyberChallenge.IT](https://cyberchallenge.it/), decise di proseguire con le attività nell'ambito. <br>
+Negli anni il team è cresciuto e si è trasformato diventando, nel 2024, un Gruppo Studentesco legato all'UniMI.<br>
+Ora le attività proposte dal gruppo riguardano vari ambiti, tra cui:
+- sostegno alla community nell'ambito delle CTF mediante la partecipazione a competizioni sia nazionali che internazionali;
+- diffusione della cultura informatica attraverso partecipazione a incontri, conferenze, workshop;
+- supporto al progetto CyberChallenge.IT mediante sessioni pomeridiane e serali di allenamento, con lo scopo di imparare e approfondire le tecniche di hacking etico;
+- organizzazione di eventi, seminari, conferenze in loco e online volti alla divulgazione della Sicurezza Informatica.
 
-The origin of K!nd4SUS dates back to 2021 when a small group of people, following the [CyberChallenge.IT](https://cyberchallenge.it/) project, decided to continue with activities in the field. Over the years the team has grown and transformed, becoming, in 2024, a Student Group linked to UniMI.
-The activities proposed by the group now cover various areas, including:
-- supporting the CTF community through participation in both national and international competitions;
-- spreading computer culture through participation in meetings, conferences, workshops;
-- supporting the CyberChallenge.IT project through afternoon and evening training sessions, with the aim of learning and deepening ethical hacking techniques;
-- organizing events, seminars, conferences both in-person and online aimed at promoting Computer Security.
+## Chi siamo
+K1nd4SUS è un Gruppo Studentesco costituito da studenti dell’[Università degli Studi di Milano][unimi]. 
 
-## Who We Are
-K1nd4SUS is a Student Group made up of students from the [University of Milan][unimi].
+A seguito del progetto [CyberChallenge.IT][cyberchallenge], attività sorta per la diffusione, formazione e sensibilizzazione su tematiche riguardanti la Sicurezza Informatica, alcuni studenti hanno deciso di proseguire in questo campo, sia
+nell’ambito didattico che pratico, e hanno formato un gruppo dedito alle competizioni di materia. Riteniamo sia ora giunto il momento di diventare un Gruppo ufficiale, sia per promuovere le nostre attività che per diffondere la cultura e lo spirito che caratterizzano queste iniziative. 
 
-Following the [CyberChallenge.IT][cyberchallenge] project, an activity created to spread, train and raise awareness on topics regarding Computer Security, some students decided to continue in this field, both in the educational and practical sphere, and formed a group dedicated to competitions in the subject. We believe the time has now come to become an official Group, both to promote our activities and to spread the culture and spirit that characterize these initiatives. 
+K1nd4SUS è apartitico, laico, inclusivo e senza scopo di lucro. Questo gruppo prende decisioni collettivamente, nel pieno rispetto dei valori democratici e nella piena conoscenza e osservanza del Codice Etico e del Codice di Comportamento dell’Ateneo. 
 
-K1nd4SUS is non-partisan, secular, inclusive and non-profit. This group makes decisions collectively, in full respect of democratic values and in full knowledge and observance of the University's Code of Ethics and Code of Conduct. 
+Crediamo nei principi che hanno animato la comunità informatica fin dai primi tempi: la necessità di comprendere e migliorare i sistemi esistenti e quella di favorire la condivisione libera di informazioni, idee e tecnologie.
+Vogliamo inoltre far si che venga riconosciuto il potenziale etico ed estetico del software, non solo nella creazione
+ma anche nella sua comprensione.
 
-We believe in the principles that have animated the computer community since the early days: the need to understand and improve existing systems and to promote the free sharing of information, ideas and technologies.
-We also want to ensure that the ethical and aesthetic potential of software is recognized, not only in its creation but also in its understanding.
+## Obiettivi
 
-## Objectives
-
-The group sets the following objectives:
+Il gruppo si prefigge i seguenti obiettivi:
 <ul>
-<li> Formalize the existence of a CTF community for the University of Milan;</li>
-<li> Spread computer culture, emphasizing the different Cybersecurity domains;</li>
-<li> Facilitate access to learning topics related to computer security, in theoretical and applied form;</li>
-<li> Stay up to date with news and the latest developments in the sector (e.g. new vulnerabilities and mitigation techniques for computer systems).</li>
+<li> Ufficializzare l’esistenza di una CTF community per l’Università degli Studi di Milano;</li>
+<li>  Diffondere la cultura informatica, ponendo l’accento sui diversi Cyberecurity domains;</li>
+<li> Favorire l’accesso all’apprendimento di tematiche relative alla sicurezza informatica, in forma teorica e applicata;</li>
+<li> Mantenersi al corrente delle novità e degli ultimi sviluppi del settore (e.g. nuove vulnerabilità e tecniche di mitigazione per i sistemi informatici).</li>
 </ul>
 
-## Activities and Field of Interest
+## Attività e campo d’interesse
 
-The group deals with deepening all aspects related to Computer Science and Computer Security, as well as disseminating these topics to all students of the university.<br>
-Our activities are varied, and include (but are not limited to) the following:
+Il gruppo si occupa di approfondire tutti gli aspetti inerenti all’Informatica e alla Sicurezza Informatica, nonchè di divulgare tali tematiche a tutti gli studenti dell’ateneo.<br>
+Le nostre attività sono varie, e includono (ma non si limitano) alle seguenti:
 <ul>
-<li> Support for the CyberChallenge.IT project, including afternoon and evening training sessions together, with the aim of learning and deepening ethical hacking techniques;</li>
-<li> Participation in competitions, such as international CTFs, also competing against other Italian and non-Italian teams;</li>
-<li> Organization of in-person and online events aimed at promoting Computer Security.</li>
+<li> Supporto al progetto CyberChallenge.IT, includendo sessioni pomeridiane e serali di allenamento insieme, con lo scopo di imparare e approfondire le tecniche di hacking etico;</li>
+<li> Partecipazione a competizioni, come le CTF internazionali, gareggiando anche contro gli altri team italiani e non;</li>
+<li> Organizzazione di eventi in loco e online volti alla divulgazione della Sicurezza Informatica.</li>
 </ul>
 
 [UniMi]: https://www.unimi.it/
 [Cyberchallenge]: https://cyberchallenge.it/
 
-## History
+## Storia
 
-### 2025 (250+ members)
-We organized our first CTF, K!nd4SUS CTF 2025, part of the CyberCup.it circuit, in which almost 600 teams from around the world participated! Additionally, we secured sixth place in CTF@CIT 2025 and **fifth place in CyberCup.it 2025**.<br>
-The board of directors, for the Academic Year 2025/2026, is as follows: Samuele Manclossi (President), Cristian Salvi (Treasurer and Vice President), Niccolò Volontè, Andrea Lunghi, Alessandro Mellone (Vice Presidents).<br>
+### 2021 (6 membri)
+I membri fondatori, alla conclusione del progetto CyberChallenge.IT, hanno deciso di proseguire con le attività nell'ambito della CyberSecurity, accomunati dalla passione per le CTF. <br>
 
-### 2024 (200+ members)
-We officially became a Student Group recognized by UniMI!<br>
-The board of directors, for the Academic Year 2024/2025, is as follows: Mattia Perfumo (President), Samuele Manclossi (Treasurer and Vice President), Mirco Picca, Tiziano Radicchi, Matteo Zoia (Vice Presidents).<br>
+### 2022 (50+ membri)
+Nel corso del 2022 abbiamo partecipato a CTF sempre più importanti e con maggiore visibilità a livello internazionale, creando anche per un breve periodo i k!nd4r00t, una collaborazione con il team r00tstici. <br>
+Nel 2022 abbiamo conquistato il 14esimo posto alla X-MAS CTF! <br>
 
-### 2023 (100+ members)
-We started the recognition process as a Student Group of the University of Milan, in order to formalize the existence of a CTF community!<br>
-Among our most significant results in 2023 we find sixth place at snakeCTF and seventh at niteCTF and Srdnlen.<br>
+### 2023 (100+ membri)
+Abbiamo iniziato la procedura di riconoscimento come Gruppo Studentesco dell'Università degli Studi di Milano, in modo da ufficializzare l'esistenza di una CTF community!<br>
+Tra i nostri risultati più significativi nel 2023 troviamo il sesto posto alla snakeCTF e il settimo alla niteCTF e alla Srdnlen. <br>
 
-### 2022 (50+ members)
-During 2022 we participated in increasingly important CTFs with greater visibility at an international level, also creating for a brief period k!nd4r00t, a collaboration with the r00tstici team. <br>
-In 2022 we secured 14th place at X-MAS CTF! <br>
+### 2024 (200+ membri)
+Siamo diventati ufficialmente un Gruppo Studentesco riconosciuto da UniMI!<br>
+Il consiglio direttivo, per l'Anno Accademico 2024/2025, è il seguente: Mattia Perfumo (Presidente), Samuele Manclossi (Tesoriere e Vicepresidente), Mirco Picca, Tiziano Radicchi, Matteo Zoia (Vicepresidenti).<br>
 
-### 2021 (6 members)
-The founding members, upon completion of the CyberChallenge.IT project, decided to continue with activities in the field of CyberSecurity, united by their passion for CTFs. <br>
+### 2025 (250+ membri)
+Abbiamo organizzato la nostra prima CTF, la K!nd4SUS CTF 2025, parte del circuito CyberCup.it, e a cui hanno partecipato quasi 600 team da tutto il mondo! Inoltre, abbiamo conquistato la sesta posizione nella CTF@CIT 2025 e **il quinto posto nella CyberCup.it 2025**.<br>
+Il consiglio direttivo, per l'Anno Accademico 2025/2026, è il seguente: Samuele Manclossi (Presidente), Cristian Salvi (Tesoriere e Vicepresidente), Niccolò Volontè, Andrea Lunghi, Alessandro Mellone (Vicepresidenti).<br>
 
-## Contact Us
-For any information or issues, you can visit the [contacts](/contact) page.
-
-## Organizational Structure
-Within the group, the following roles are identified:<br>
+## Organigramma
+All’interno del gruppo sono individuati i seguenti ruoli:<br>
 <ul>
-<li> <b>President</b>, who coordinates and presides over all group activities and appoints the Treasurer. The presidential term lasts one year. </li>
-<li> <b>Vice Presidents</b>, who handle the concrete and daily management of activities;</li>
-<li> <b>Treasurer</b>, namely a Vice President who also handles the management of the Group's financial and material resources. The Treasurer has veto power over decisions made by the Assembly regarding the Group's finances, only in cases where the implementation of those decisions would result in an unsustainable or incorrect management of available resources;</li>
-<li> <b>Administrators</b>, appointed by the President or Vice Presidents, who manage all communication channels of the Group;</li>
-<li> <b>Assembly</b>, namely the board of directors formed by the President and all Vice Presidents, including the Treasurer. </li> 
+<li> <b>Presidente</b>, il quale coordina e presiede tutte le attività del gruppo e nomina il Tesoriere. La carica presidenziale ha durata annuale. </li>
+<li> <b>Vicepresidenti</b>, che si occupano della gestione concreta e giornaliera delle attività;</li>
+<li> <b>Tesoriere</b>, ossia un Vicepresidente che si occupa anche della gestione delle risorse finanziare e materiali del Gruppo. Il Tesoriere ha il diritto di veto sulle decisioni prese dall’Assemblea per quanto riguarda le
+finanze del Gruppo, nei soli casi in cui l’entrata in vigore di quelle decisioni consisterebbe in una gestione insostenibile o non corretta delle risorse a disposizione;</li>
+<li> <b>Amministratori</b>, nominati dal Presidente o dai Vicepresidenti, che si occupano di gestire tutti i canali di comunicazione del Gruppo;</li>
+<li> <b>Assemblea</b>, ossia il consiglio direttivo formato dal Presidente e da tutti i Vicepresidenti, Tesoriere incluso. </li> 
 </ul>
 
-The Assembly meets in ordinary meetings on a monthly basis and in extraordinary meetings as needed. <br>
-Its functions are as follows:
+L’Assemblea si riunisce in incontri ordinari a cadenza mensile e in incontri straordinari in base alla necessità. <br>
+Le sue funzioni sono le seguenti:
 <ul>
-<li> Elect or remove (for valid and proven reasons) the President by majority vote;</li> 
-<li> Participate on behalf of the Student Group in funding calls and reimbursement calls issued by the University each Academic Year;</li> 
-<li> Establish the medium and long-term objectives of the Group, as well as the initiatives it intends to participate in;</li>
-<li> Discuss and approve by majority vote any changes to the Statute or Regulations.
-Changes to the Statute require a plenary session and do not come into effect until the time of its renewal, while changes to the Regulations can be made during any meeting;</li> 
-<li> Discuss proposals from members who do not hold official positions, whether they are activities, changes to the Group's Documents or otherwise.</li>
+<li> Eleggere o destituire (per valide e comprovate motivazioni) il Presidente mediante voto di maggioranza;</li> 
+<li> Partecipare a nome del Gruppo studentesco ai bandi finanziamenti e ai bandi rimborsi emessi dall’Ateneo ogni Anno Accademico;</li> 
+<li> Stabilire gli obiettivi a medio e lungo termine del Gruppo, nonch´e le iniziative cui intende partecipare;</li>
+<li> Discutere e approvare mediante voto di maggioranza eventuali modifiche dello Statuto o del Regolamento.
+Le modifiche allo Statuto richiedono una sessione plenaria e non entrano in vigore fino al momento del suo rinnovo, mentre le modifiche al Regolamento possono essere effettuate durante una qualsiasi riunione;</li> 
+<li> Discutere delle proposte di membri che non ricoprono cariche ufficiali, siano esse attività, modifiche ai Documenti del Gruppo o altro.</li>
 </ul>
 
-## Partner Organizations
+## Associazioni Amiche
+K!nd4SUS collabora con diverse associazioni e gruppi di interesse nel campo della cybersecurity e dell’informatica in generale. Queste collaborazioni ci permettono di organizzare eventi congiunti, condividere risorse e conoscenze, e creare una rete di supporto per i nostri membri.
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-center justify-items-center my-6">
-  <a href="https://lcm.mi.infn.it/" class="flex flex-col items-center gap-3 p-4 h-full min-h-32">
-    <img src="/images/associazioni/lcm.webp" alt="Logo LCM" class="w-15 h-15 object-contain" />
-    <span class="text-sm font-semibold text-center">LCM (Laboratorio di Calcolo e Multimedia)</span>
-  </a>
+#### [LCM](https://lcm.mi.infn.it/) - Laboratorio di Calcolo e Multimedia
 
-  <a href="https://www.instagram.com/aisf.unimi/" class="flex flex-col items-center gap-3 p-4 h-full min-h-32">
-    <img src="/images/associazioni/aisf.webp" alt="Logo AISF" class="w-70 h-70 object-contain" />
-    <span class="text-sm font-semibold text-center">AISF (Associazione Italiana Studenti di Fisica)</span>
-  </a>
+<img src="images/lcm.webp" alt="Logo LCM" width="100" />
 
-  <a href="https://linktr.ee/codelabunimi" class="flex flex-col items-center gap-3 p-4 h-full min-h-32">
-    <img src="/images/associazioni/codelab.webp" alt="Logo CODELAB" class="w-20 h-20 object-contain" />
-    <span class="text-sm font-semibold text-center">CODELAB</span>
-  </a>
+#### [AISF](https://www.instagram.com/aisf.unimi/) - Associazione Italiana Studenti di Fisica
 
-  <a href="https://studentiunimi.it/" class="flex flex-col items-center gap-3 p-4 h-full min-h-32">
-    <img src="/images/associazioni/studentiunimi.webp" alt="Logo StudentiUniMi" class="w-32 h-32 object-contain" />
-    <span class="text-sm font-semibold text-center">StudentiUniMi</span>
-  </a>
-</div>
+<img src="images/aisf.webp" alt="Logo AISF" width="100" />
+
+#### [CODELAB](https://linktr.ee/codelabunimi)
+
+<img src="images/codelab.webp" alt="Logo CODELAB" width="100" />

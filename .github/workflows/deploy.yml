@@ -3,7 +3,7 @@ name: Build & Deploy
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  workflow_dispatch:    # lets you also trigger it manually from the Actions tab
 
 env:
   REGISTRY: ghcr.io

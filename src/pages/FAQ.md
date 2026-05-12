@@ -5,64 +5,63 @@ description: "FAQ"
 author: "K!nd4SUS"
 ---
 
-This section addresses common questions regarding the Team. For further inquiries, please [contact](/contact) the Team directly.
+Qui trovi domande frequentemente poste riguardo al Team.
+Per ulteriori questioni, [contatta](/contact) il Team.
 
-## How do I join?
-To join K!nd4SUS, please subscribe to the official groups. 
-Communications are managed through the [Telegram News](https://t.me/k1nd4susCTF) channel, while the main chat is hosted in the [Telegram Main Group](https://t.me/+Rej8qbbkONMxZTdk).<br> On [Discord](https://discord.gg/6GTSrewn8y), we convene for competitions and on **thursday evenings** at 9:00 PM (CET 21:00) to solve challenges, discuss, and delve into specific topics.
+## Come posso entrare in K!nd4SUS?
+Per entrare in K!nd4SUS unisciti ai gruppi ufficiali.
+Le comunicazioni avverranno attraverso il canale [Telegram News](https://t.me/k1nd4susCTF), mentre la chat è nel gruppo [Telegram](https://t.me/+Rej8qbbkONMxZTdk).<br>
+Su [Discord](https://discord.gg/6GTSrewn8y) ci troviamo per le competizioni e il giovedì sera alle 21:00 per risolvere challenge, discutere e approfondire argomenti.
 
-You may contact the team email without hesitation: [info@k1nd4sus.it](mailto:info@k1nd4sus.it) for any queries or for answers to supplementary questions not found on the website. Alternatively, our website's [contact](/contact) page provides cards with all active contacts and Team roles.
-
-### Any rules to follow?
-Before you join, make sure you read our [guidelines](/rules).
-
-### Any useful resources?
-Click [here](/resources) to consult the list of useful resources. We have compiled conferences, websites, training materials, and applications for practice or learning.
-
-## What does "CTF" mean?
-CTFs (Capture the Flag) are a specialized type of computer security competition. There are three common types of CTF: **Jeopardy**, **Attack-Defence**, and **Hybrid**.
+## Cos'è una CTF?
+Le CTF (Capture the Flag) sono un tipo speciale di competizioni di sicurezza informatica. Ci sono tre tipi comuni di CTF: Jeopardy, Attack-Defence e miste.
+Le CTF in stile Jeopardy presentano una serie di domande (challenge) in diverse categorie. Ad esempio, Web, Forensics, Crypto, Binary o altro.
 <br>
 
-**Jeopardy-style CTFs** present a series of questions (challenges) across various categories, such as **Web Security**, **Reverse Engineering**, **Network Security**, **Crypto**, **Pwning**, or others. Teams earn points for each successfully solved challenge, with scores varying based on difficulty. At the conclusion of the game time, the sum of points determines the CTF winner. A prominent example of this type of CTF is the qualifications for the **DEFCON CTF**. 
+Le squadre possono guadagnare punti per ogni challenge risolta, e il punteggio varia a seconda della sua difficoltà. Alla fine del tempo di gioco, la somma dei punti determina il vincitore della CTF. Un esempio famoso di questo tipo di CTF sono le qualifications per la DEFCON CTF.
 <br>
 
-**Attack-Defence-style** CTFs represent another competition format. Each team is provided with its own network (or merely a host) featuring vulnerable services. Teams are given time to patch their services and develop exploits. Subsequently, the organizers connect the participants, and the game commences! Teams must protect their own services to earn defense points while simultaneously attacking opponents to gain attack points. 
+Le CTF in stile Attack-Defence sono un altro tipo di competizione. Ogni squadra ha una propria rete (o anche solo un host) con servizi vulnerabili. Ogni squadra ha tempo per correggere i propri servizi e sviluppare exploit. Successivamente, gli organizzatori collegano i partecipanti alla competizione e inizia il gioco! Si devono proteggere i propri servizi per guadagnare punti di difesa e nel mentre attaccare gli avversari per guadagnare punti di attacco.
 <br>
+Storicamente, questo è stato il primo tipo di CTF, e la DEFCON CTF è considerata una sorta di Coppa del Mondo di tutte le altre competizioni.
+Le CTF toccano spesso molti altri aspetti della sicurezza informatica: cryptography, steganography, binary analysis, reverse engineering, mobile security e altri.
 
-> Historically, this was the original type of CTF, and the **DEFCON CTF** is considered a kind of World Cup for all other competitions. 
+Cortesia di [CTFTime](https://ctftime.org/ctf-wtf).
 
-CTFs engage many other aspects of information security.
-*Courtesy of [CTFTime](https://ctftime.org/ctf-wtf).*
+## Avete delle risorse utili?
+Clicca [qui](/resources) per consultare la lista di risorse utili. Abbiamo unito conferenze, siti, allenarsi e applicativi per esercitarsi o imparare.
 
-## What's CyberChallenge.IT?
-[CyberChallenge.IT](https://cyberchallenge.it/), a training program for young talents between 16 and 24 years of age, is the primary Italian initiative for identifying, attracting, recruiting, and placing the next generation of cybersecurity professionals.
+## Cos'è CyberChallenge.IT?
+[CyberChallenge.IT](https://cyberchallenge.it/), programma di formazione per i giovani talenti tra i 16 e i 24 anni, è la principale iniziativa italiana per identificare, attrarre, reclutare e collocare la prossima generazione di professionisti della sicurezza informatica.
+Per partecipare non servono esperti di programmazione ma grande passione, impegno e curiosità nelle discipline scientifico-tecnologiche (scienza, tecnologia, ingegneria e matematica). Servono anche capacità logiche, di problem solving, di comunicazione e, soprattutto, tanta voglia di imparare.
 
-Participation does not require programming experts but instead necessitates great passion, commitment, and curiosity in STEM disciplines (Science, Technology, Engineering, and Mathematics). Logical skills, problem-solving abilities, communication skills, and, above all, a strong willingness to learn are also required. 
+Dal 2020 CyberChallenge.IT è stato riconosciuto dal Ministero dell'Istruzione come progetto per la valorizzazione delle eccellenze; attraverso questi progetti, il Ministero individua le iniziative e le modalità di riconoscimento dei livelli di eccellenza conseguiti dagli studenti della scuola secondaria di secondo grado. 
 
-Since 2020, CyberChallenge.IT has been recognized by the Ministry of Education as a project for the enhancement of excellence; through these projects, the Ministry identifies initiatives and methods for recognizing levels of excellence achieved by secondary school students. 
+Cortesia di [CyberChallenge.IT](https://cyberchallenge.it/rules).
 
-*Courtesy of [CyberChallenge.IT](https://cyberchallenge.it/rules).*
+## Cos'è CyberCup?
+[CyberCup](https://cybercup.it/) consiste in un torneo Capture The Flag, costituito da vari eventi selezionati tra le gare internazionali a disposizione. Al torneo potranno partecipare tutte le squadre (senza limiti al numero di partecipanti) che si iscriveranno, incluse quelle di nuova costituzione. 
 
-## What's CyberCup?
-[CyberCup](https://cybercup.it/) is a Capture The Flag tournament comprising various events selected from available international competitions. All registered teams (with no limit on the number of participants), including newly formed ones, are eligible to participate.
+La competizione sarà caratterizzata da un ranking delle squadre, il punteggio dipende dalle performance ad ogni gara selezionata. 
+Gli eventi di CyberCup verranno accuratamente scelti in accordo alla qualità e al livello di difficoltà da un comitato tecnico. Avranno maggiore priorità le competizioni organizzate da università e da squadre CTF italiane. Gli eventi avranno una difficoltà bilanciata in modo da accogliere sia squadre con poca esperienza che quelle più preparate.
 
-The competition features a team ranking, where scores depend on performance in each selected competition.
-CyberCup events are carefully chosen based on quality and difficulty level by a technical committee. Higher priority is given to competitions organized by Italian universities and CTF teams. The events are designed with balanced difficulty to accommodate both **less experienced** and **highly** prepared teams.
+Cortesia di [CyberCup](https://cybercup.it/).
 
-Courtesy of [CyberCup](https://cybercup.it/).
+### Come posso partecipare?
+Se vuoi partecipare ti basta fare parte del team e presentarti nel nostro server Discord nei giorni di gara.
 
-### How do I participate?
-To participate, you simply need to be a member of the team and be present on our Discord server on the days of the competition.
+## Vuoi pubblicare sul blog?
+Se hai degli articoli che vorresti pubblicare sul [blog](/blog/tags/blog), contatta [Samuele](https://t.me/s3m_mancl).
 
-## Collaborating
+## Esiste un regolamento o uno statuto?
+Certamente, il [regolamento](/rules) e lo [statuto](/about) sono presenti sul sito.
 
-### Publishing a Blog Post
-If you have articles you would like to publish on the [blog](/blog/tags/blog), contact us by [email](mailto:info@kindasus.it) or Samuele (President) on [Telegram](https://t.me/s3m_mancl).
+## Vuoi proporre un evento/iniziativa/CTF?
+Scrivi a un membro del consiglio direttivo o all'email del gruppo. Saremo noi a ricontattarti con maggiori istruzioni.
+La pagina [contatti](/contact) del nostro sito contiene card con tutti i contatti attivi e i ruoli del Team.
 
-### Idea or Suggestion (CTF/event/activity)
-Please [contact](/contact) any member of the committee or the group email. We will contact you with further instructions. The contact page on our website contains cards with all active contacts and the Team roles.
+## Vuoi collaborare in un progetto?
+Tieni sempre d'occhio il [canale delle news](https://t.me/k1nd4susCTF). Ogni volta che un nuovo progetto inizia sarà pubblicato un messaggio. A quel punto basterà seguire le istruzioni.
 
-### Collaborating in Projects
-Keep an eye on the [Telegram News](https://t.me/k1nd4susCTF) group chat! A message will be published whenever a new project commences. You can then proceed by following the instructions provided.
-
-If you don't have access to the team GitHub, please ask the responsible project manager to grant you access to the specific repository. *Access to the entire organization is reserved exclusively for organizers and members who are particularly active in both development and CTFs*.
+## Stai collaborando a un progetto ma non hai accesso a GitHub?
+Chiedi al responsabile del progetto in questione di darti l'accesso alla repository. L'accesso all'intera organizzazione è previsto solo per gli organizzatori e per membri particolarmente attivi sia nello sviluppo che nelle CTF.

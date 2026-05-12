@@ -7,6 +7,7 @@ import { teamMembers } from "../../content/teamMembers";
 import { authors } from "../../content/authors";
 import { tagConfig } from "../../content/tagConfig";
 import TagIcon from "../ui/TagIcon.astro";
+import { Icon } from "astro-icon/components"
 
 const [staticData] = await getCollection("staticData");
 const {
@@ -60,10 +61,10 @@ const {
   <p class="mb-0 text-lg font-semibold leading-8 text-blacktext dark:text-gray-200 max-xl:text-base max-sm:text-center">
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            > K!nd4SUS </span> (/ˈkaɪndə sʌs/) is the CTF players team of the <span
+            > K!nd4SUS </span> (/ˈkaɪndə sʌs/) è la squadra di CTF players dell'<span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >University of Milan (UniMi)</span
-          >, made up of cybersecurity and computer science enthusiasts.
+            >Università degli Studi di Milano (UniMi)</span
+          >, di cui fanno parte appassionati di cybersecurity e informatica.
         </p>
 
   <div class="flex gap-4 items-start justify-start max-sm:flex-row max-sm:justify-center max-sm:items-center">
@@ -153,10 +154,15 @@ const {
             {author ? (
               <a
                 href={`/authors/${author.slug}/`}
-                aria-label={`Go to ${member.name}'s author page`}
+                aria-label={`Vai alla pagina autore di ${member.name}`}
                 style="position:absolute;inset:0;z-index:10;"
                 tabindex="-1"
-                class="member-card-link"
+                onclick={(e) => {
+                  const path = (e.composedPath ? e.composedPath() : (e as any).path || []) as Array<HTMLElement>;
+                  if (path.some((el: HTMLElement) => el && el.classList && el.classList.contains('member-social-link'))) {
+                    e.preventDefault();
+                  }
+                }}
               ></a>
             ) : null}
             {/* Card content, with social icons marked for priority */}
@@ -230,16 +236,3 @@ const {
     transition: color 0.18s cubic-bezier(0.4,0,0.2,1);
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.member-card-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const path = (e as any).composedPath ? (e as any).composedPath() : ((e as any).path || []);
-        if (path.some((el: any) => el && el.classList && el.classList.contains('member-social-link'))) {
-          e.preventDefault();
-        }
-      });
-    });
-  });
-</script>

@@ -28,7 +28,7 @@ const { posts } = Astro.props;
 <section class="scroll-m-16 relative pt-8 pb-32 max-2xl:px-8 max-md:pt-4" id="events">
   <div class="mx-auto max-w-7xl py-8">
     <div class="flex gap-4 items-center justify-center text-center ">
-      <Heading text={`${tag.charAt(0).toUpperCase() + tag.slice(1)}s @ `} textGradient="K!nd4SUS" level={2} />
+      <Heading text={`${tag.charAt(0).toUpperCase() + tag.slice(1)}`} textGradient="K!nd4SUS" level={2} />
     </div>
     <p class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium">
       All our events tagged as <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200">{tag}</span>.
@@ -36,12 +36,11 @@ const { posts } = Astro.props;
   </div>
   <div
     id="containerEvents"
-    class="mx-auto max-w-7xl p-2 py-4 columns-1 md:columns-2 xl:columns-3 gap-6 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
+    style="column-count: 1; column-gap: 1.5rem; masonry-auto-flow: next;"
+    class="mx-auto max-w-7xl p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
   >
     {posts.length === 0 ? (
-      <div class="text-center text-lg text-gray-400 py-10">
-        No event found for this tag.
-      </div>
+      <div class="text-center text-lg text-gray-400 py-10">No event found for this tag!</div>
     ) : (
       posts.map((post) => (
         <Event
@@ -60,15 +59,16 @@ const { posts } = Astro.props;
 </section>
 
 <style>
+  /* Use direct CSS media queries instead of Tailwind for more reliable columns */
   @media (min-width: 768px) {
     #containerEvents {
-      column-count: 2;
+      column-count: 2 !important;
     }
   }
   
   @media (min-width: 1280px) {
     #containerEvents {
-      column-count: 3;
+      column-count: 3 !important;
     }
   }
 </style>
