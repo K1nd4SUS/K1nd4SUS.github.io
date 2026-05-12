@@ -5,21 +5,21 @@ description: "Rules"
 author: "K!nd4SUS"
 ---
 
-Il seguente regolamento stabilisce una base, tuttavia, ci riserviamo il diritto di valutare ogni singolo caso nel suo contesto specifico.
+The following rules establish a baseline, however, we reserve the right to evaluate each individual case in its **specific** context.
 
-Si applica principalmente nel gruppo Telegram e nel canale Discord `#chat-pubblica`.
+It applies primarily in the Telegram group and in the Discord channel `#chat-pubblica` (public chat).
 
-## Comportamenti tossici
-È vietata ogni forma di contenuto offensivo o blasfemo, sia nei messaggi che nel profilo personale (nome utente, foto e descrizione). Sono altresì vietati insulti verso altri utenti, siano essi studenti, docenti o altre figure. La discriminazione sociale in qualunque forma non è tollerata. Gli utenti che interagiscono al fine di provocare, disturbare, creare disagio o disinformazione verranno allontanati.
+## Toxic Behaviors
+Any form of offensive or blasphemous content is prohibited, both in messages and in personal profiles (username, photo and description). Insults towards other users are also forbidden, whether they are students, teachers or other figures. Social discrimination in any form is not tolerated. Users who interact with the intention of provoking, disturbing, creating discomfort or spreading misinformation will be removed.
 
 ## Spam
-Non è permesso l'invio di messaggi, immagini, video o link che non hanno nessuna attinenza con gli argomenti trattati da questo gruppo. Dal momento che il termine spam può risultare molto generico, di seguito sono elencate le tipologie di contenuti severamente vietati:
-- pubblicità, sponsorizzazioni e altre iniziative commerciali;
-- autopromozione di qualsiasi tipo (es. pagine social, progetti ecc..);
-- link a community, iniziative o realtà esterne (salvo previo accordo con gli amministratori).
+Sending messages, images, videos or links that have no relevance to the topics discussed in this group is not permitted. Since the term spam can be very generic, the following types of strictly prohibited content are listed below:
+- advertising, sponsorships and other commercial initiatives;
+- self-promotion of any kind (e.g. social media pages, projects, etc.);
+- links to communities, initiatives or external entities (unless previously agreed with the administrators).
 
-## Contenuti condivisi
-È vietato inviare contenuti NSFW (Not Safe For Work), ovvero materiale sessualmente esplicito, volgare o ritenuto potenzialmente offensivo dalla collettività. La responsabilità civile e penale per tutti i contenuti inviati sui gruppi è personale.
+## Shared Content
+Sending NSFW (Not Safe For Work) content is prohibited, meaning sexually explicit, vulgar material or content deemed potentially offensive by the community. Civil and criminal liability for all content sent to the groups is personal.
 
-## Altro
-Se pensi di aver bisogno di un'eccezione alle regole essendo il contenuto che vuoi inviare di particolare importanza o rilevanza per il gruppo in cui stai scrivendo, contatta preventivamente un amministratore del gruppo per avere l'autorizzazione.
+## Other
+If you think you need an exception to the rules because the content you want to send is of particular importance or relevance to the group you are writing in, contact a group administrator in advance to obtain authorization.
