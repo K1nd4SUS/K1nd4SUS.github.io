@@ -81,7 +81,7 @@ const { title } = Astro.props;
           }
         });
       },
-      { rootMargin: "-30% 0px -65% 0px", threshold: 0.1 } // Adjusted to improve visibility
+      { rootMargin: "-30% 0px -65% 0px", threshold: 0.1 }
     );
 
     headers.forEach((header) => observer.observe(header));
