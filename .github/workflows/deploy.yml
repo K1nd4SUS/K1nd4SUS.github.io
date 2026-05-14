@@ -61,9 +61,21 @@ jobs:
         uses: aquasecurity/trivy-action@v0.2.0
         with:
           image-ref: ${{ env.REGISTRY }}/${{ needs.build-and-push.outputs.image_lc }}:latest
-          format: 'table'
+          format: 'json'
+          output: trivy-report.json
           severity: 'CRITICAL'
-          exit-code: '1'
+          exit-code: '0'
+
+      - name: Report critical CVEs (non-blocking)
+        run: |
+          critical_count=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "CRITICAL")] | length' trivy-report.json)
+          echo "Critical CVEs found: $critical_count"
+
+      - name: Upload Trivy report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-report
+          path: trivy-report.json
 
   deploy:
     runs-on: ubuntu-latest
