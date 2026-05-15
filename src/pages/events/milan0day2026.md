@@ -36,10 +36,10 @@ Get your **free** ticket before it's too late! Click [HERE](https://www.eventbri
 | 13:15 - 14:15 | Lunch break                                                                      |
 | 14:15 - 14:20 | Afternoon session opening                                                        |
 | 14:20 - 15:15 | Talk 4 - AI and the Death of Privacy? Navigating New Threats and Modern Defenses |
-| 15:15 - 16:10 | Talk 5 - To be announced                                                         |
+| 15:15 - 16:10 | Talk 5 - AI governance: Deep dive of the security of LLM                                              |
 | 16:10 - 16:20 | Pausa                                                                            |
-| 16:20 - 17:00 | Talk 6 - To be announced                                                         |
-| 17:00 - 17:40 | Talk 7 - Make the analysis fun again!                                            |
+| 16:20 - 17:00 | Talk 6 - Make the analysis fun again!                                            |
+| 17:00 - 17:40 | Talk 7 - Everything in the Cloud looks secure... Until It isn’t                                            |
 | 17:45 -       | Closing remarks and end of conference                                            |
 
 ## Talks
@@ -72,20 +72,37 @@ Get your **free** ticket before it's too late! Click [HERE](https://www.eventbri
 - Abstract: In 2026, AI has evolved into a "privacy accelerant" that both amplifies old vulnerabilities and creates entirely new categories of risk. This session breaks down the AI privacy crisis into two core dimensions: Systemic Endogenous Risks, where AI's massive data hunger and "model memory" allow for exploits like membership inference and data reconstruction, and Functional Misuse, where AI's "superpowers" enable the inference of sensitive personal traits from benign metadata and the generation of high-fidelity deepfakes. To address these challenges, we evaluate the modern defensive toolkit, contrasting formal methods like differential privacy, which provides mathematical guarantees, with heuristic tactics such as adversarial perturbations and synthetic data. By the end of this talk, participants will have a strategic roadmap for navigating the "Privacy Paradox" and implementing resilient, privacy-preserving AI frameworks in an increasingly automated world.
 - Bio: Dr. Wang is a dedicated researcher specializing in AI privacy, multimedia privacy, and the security of generative AI. He has published over 20 papers in prestigious international journals and conferences, including IEEE TPAMI, TIFS, TDSC, ACM Multimedia, and CSUR. His research on "Privacy in AIGC" has been recognized as an ESI Highly Cited Paper. Beyond his research, Dr. Wang actively contributes to the scientific community as a reviewer for top-tier venues such as ICLR, KDD, TDSC, TOMM, TBIOM, and TKDE. He is a recipient of the Chinese National Scholarship and received an Honourable Mention Award at the ACM International Multimedia Conference. His work is supported by the CAST Young Sci-Tech Talent Cultivation Project. He is an active member of the ACM EIGTRUST and China CSIG.
 
-### Talk 5 - To be announced
+### Talk 5 - AI governance: Deep dive of the security of LLM
 
-Details coming soon.
+- Topic: AI Security and Attacks on AI Systems
+- Speaker: [Raoul Alfredo Rocher](https://www.linkedin.com/in/raoulalfredorocher/)
+- Abstract: The idea is to explore what is Agentic AI, what IBM intend for Agentic AI governance with a deep dive in the most important attack in LLM e agentic ai and how to protect.
++ 1 Agentic AI
++ 2 Agentic AI governance: monitoring, guardrailing and security
++ 3 Agentic AI and LLM main attack
++ 4 How to protect from attacker in LLM
+- Bio: I am a professional with a strong inclination towards innovation, continuous learning, and research. I am passionate about technological challenges and innovations, always seeking advanced solutions in the fields of artificial intelligence and cybersecurity. I have substantial hands-on experience in Network, Security, data science, both as a Technical Sales and Data Scientist, and I am committed to leading and contributing to the creation of Gen AI and Agent-based solutions with my new roles as AI Leader in Italy for IBM Italy.
 
-### Talk 6 - To be announced
 
-Details coming soon.
-
-### Talk 7 - Make the analysis fun again!
+### Talk 6 - Make the analysis fun again!
 
 - Topic: Malware Analysis and Detection
 - Speaker: [Gianluigi Imbelli](https://www.linkedin.com/in/gianluigi-imbelli-8a13372a6/)
 - Abstract: The talk is about an indie game with the objective to destroy a malware. In practice the gamer does some static and dynamic analysis to get some sort of key to move forward in the game. If you're not able to win in a certain amount of time, the OS gets destroyed like with a wiper malware. In the game you get insight about the malware and there are augments that slow down or freeze the malware process. You can get hints for handling the malware disassemble, but when you get a hint, the malware process speeds up.
 - Bio: I'm Gianluigi Imbelli and I'm from Benevento. This is my last year as a student at the University of Milan and I want to learn more about malware and malware reversing. This would be my first experience in making a useful game to make people get a joyful approach to learning malware analysis.
+
+### Talk 7 - Everything in the Cloud looks secure... Until It isn’t
+
+- Topic: Cloud and Hypervisor Security
+- Speaker: [Matteo Balasco](https://www.linkedin.com/in/mttbal)
+abstract: Cloud environments are rarely breached through exotic zero-days. More often, the root cause is a misconfiguration that looks fine in the architecture diagram, passes automated scans, and still leaves the door wide open.
+
+This talk focuses not only on standard security best practices, but also on the subtle AWS misconfigurations that actually matter in production, the ones that survive audits precisely because nothing breaks and no alerts fire. We’ll explore how configurations that appear secure at every layer can still be exploited laterally, and why the gap between what your architecture looks like and what it actually does is where attackers thrive.
+
+All examples are drawn from real production environments, because theory is rarely where the problems hide.
+- Bio: I’m a Security Engineer specializing in cloud, network, and corporate security. I currently work at Docebo, where I manage threat detection and response across multi-cloud infrastructure, drive CNAPP/CSPM adoption, and work on DevSecOps automation.
+
+I have a background as a System Engineer and Network Engineer, and I’m an AWS Certified Solutions Architect, Associate and ISC2 SSCP certified, with hands-on experience across the full incident lifecycle.
 
 ### Reach Milan0Day
 
