@@ -95,7 +95,7 @@ Get your **free** ticket before it's too late! Click [HERE](https://www.eventbri
 
 - Topic: Cloud and Hypervisor Security
 - Speaker: [Matteo Balasco](https://www.linkedin.com/in/mttbal)
-abstract: Cloud environments are rarely breached through exotic zero-days. More often, the root cause is a misconfiguration that looks fine in the architecture diagram, passes automated scans, and still leaves the door wide open.
+- Abstract: Cloud environments are rarely breached through exotic zero-days. More often, the root cause is a misconfiguration that looks fine in the architecture diagram, passes automated scans, and still leaves the door wide open.
 
 This talk focuses not only on standard security best practices, but also on the subtle AWS misconfigurations that actually matter in production, the ones that survive audits precisely because nothing breaks and no alerts fire. We’ll explore how configurations that appear secure at every layer can still be exploited laterally, and why the gap between what your architecture looks like and what it actually does is where attackers thrive.
 
