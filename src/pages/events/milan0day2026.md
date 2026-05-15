@@ -77,10 +77,10 @@ Get your **free** ticket before it's too late! Click [HERE](https://www.eventbri
 - Topic: AI Security and Attacks on AI Systems
 - Speaker: [Raoul Alfredo Rocher](https://www.linkedin.com/in/raoulalfredorocher/)
 - Abstract: The idea is to explore what is Agentic AI, what IBM intend for Agentic AI governance with a deep dive in the most important attack in LLM e agentic ai and how to protect.
-+ 1 Agentic AI
-+ 2 Agentic AI governance: monitoring, guardrailing and security
-+ 3 Agentic AI and LLM main attack
-+ 4 How to protect from attacker in LLM
+    + 1 Agentic AI
+    + 2 Agentic AI governance: monitoring, guardrailing and security
+    + 3 Agentic AI and LLM main attack
+    + 4 How to protect from attacker in LLM
 - Bio: I am a professional with a strong inclination towards innovation, continuous learning, and research. I am passionate about technological challenges and innovations, always seeking advanced solutions in the fields of artificial intelligence and cybersecurity. I have substantial hands-on experience in Network, Security, data science, both as a Technical Sales and Data Scientist, and I am committed to leading and contributing to the creation of Gen AI and Agent-based solutions with my new roles as AI Leader in Italy for IBM Italy.
 
 
@@ -96,12 +96,9 @@ Get your **free** ticket before it's too late! Click [HERE](https://www.eventbri
 - Topic: Cloud and Hypervisor Security
 - Speaker: [Matteo Balasco](https://www.linkedin.com/in/mttbal)
 - Abstract: Cloud environments are rarely breached through exotic zero-days. More often, the root cause is a misconfiguration that looks fine in the architecture diagram, passes automated scans, and still leaves the door wide open.
-
 This talk focuses not only on standard security best practices, but also on the subtle AWS misconfigurations that actually matter in production, the ones that survive audits precisely because nothing breaks and no alerts fire. We’ll explore how configurations that appear secure at every layer can still be exploited laterally, and why the gap between what your architecture looks like and what it actually does is where attackers thrive.
-
 All examples are drawn from real production environments, because theory is rarely where the problems hide.
 - Bio: I’m a Security Engineer specializing in cloud, network, and corporate security. I currently work at Docebo, where I manage threat detection and response across multi-cloud infrastructure, drive CNAPP/CSPM adoption, and work on DevSecOps automation.
-
 I have a background as a System Engineer and Network Engineer, and I’m an AWS Certified Solutions Architect, Associate and ISC2 SSCP certified, with hands-on experience across the full incident lifecycle.
 
 ### Reach Milan0Day
