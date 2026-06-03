@@ -9,7 +9,7 @@ This section addresses common questions regarding the Team. For further inquirie
 
 ## How do I join?
 To join K!nd4SUS, please subscribe to the official groups. 
-Communications are managed through the [Telegram News](https://t.me/k1nd4susCTF) channel, while the main chat is hosted in the [Telegram Main Group](https://t.me/+Rej8qbbkONMxZTdk).<br> On [Discord](https://discord.gg/6GTSrewn8y), we convene for competitions and on **thursday evenings** at 9:00 PM (CET 21:00) to solve challenges, discuss, and delve into specific topics.
+Communications are managed through the [Telegram News](https://t.me/k1nd4susCTF) channel, while the main chat is hosted in the [Telegram Main Group](https://t.me/+_l_1wvVRK0U2MGFk).<br> On [Discord](https://discord.gg/6GTSrewn8y), we convene for competitions and on **thursday evenings** at 9:00 PM (CET 21:00) to solve challenges, discuss, and delve into specific topics.
 
 You may contact the team email without hesitation: [info@k1nd4sus.it](mailto:info@k1nd4sus.it) for any queries or for answers to supplementary questions not found on the website. Alternatively, our website's [contact](/contact) page provides cards with all active contacts and Team roles.
 
