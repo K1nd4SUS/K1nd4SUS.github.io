@@ -77,22 +77,6 @@ jobs:
           name: trivy-report
           path: trivy-report.json
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: security-scan
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key:  ${{ secrets.SSH_KEY }}
-          script: |
-            cd /opt/astro-app
-            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
-            docker compose pull
-            docker compose up -d
-            docker image prune -f
   health-check:
     runs-on: ubuntu-latest
     needs: deploy
