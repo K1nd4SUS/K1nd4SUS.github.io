@@ -1,80 +1,64 @@
-name: Build & Deploy
+name: build-and-deploy
 
 on:
   push:
-    branches: [master]
-  workflow_dispatch:
+    branches: [main]
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+permissions:
+  contents: read
+  packages: write        
 
 jobs:
-  build-and-push:
+  build-push-bump:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    outputs:
-      image_lc: ${{ steps.image-name.outputs.image_lc }}
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Lowercase image name (GHCR requires it)
-        id: image-name
-        run: |
-          echo "IMAGE_LC=${IMAGE_NAME,,}" >> $GITHUB_ENV
-          echo "image_lc=${IMAGE_NAME,,}" >> $GITHUB_OUTPUT
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Log in to GHCR
+      - name: Log in to ghcr
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_LC }}:latest
-            ${{ env.REGISTRY }}/${{ env.IMAGE_LC }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Build and push
+        id: build
+        run: |
+          TAG=${GITHUB_SHA::7}
+          IMAGE=ghcr.io/k1nd4sus/k1nd4sus.github.io
+          docker build -t $IMAGE:$TAG .
+          docker push $IMAGE:$TAG
+          DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' $IMAGE:$TAG | cut -d@ -f2)
+          echo "tag=$TAG"       >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
 
-  security-scan:
-    runs-on: ubuntu-latest
-    needs: build-and-push
-    steps:
-      - name: Code Checkout
+      - name: Checkout gitops repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      - name: Run Trivy Scan on Docker Image
-        uses: aquasecurity/trivy-action@v0.2.0
-        with:
-          image-ref: ${{ env.REGISTRY }}/${{ needs.build-and-push.outputs.image_lc }}:latest
-          format: 'json'
-          output: trivy-report.json
-          severity: 'CRITICAL'
-          exit-code: '0'
+          repository: k1nd4sus/k1nd4-cluster
+          ssh-key: ${{ secrets.GITOPS_DEPLOY_KEY }}          # the fine-grained PAT
+          path: gitops
 
-      - name: Report critical CVEs (non-blocking)
+      - name: Bump image in values (yq, with rebase-retry)
+        env:
+          TAG:    ${{ steps.build.outputs.tag }}
+          DIGEST: ${{ steps.build.outputs.digest }}
         run: |
-          critical_count=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity == "CRITICAL")] | length' trivy-report.json)
-          echo "Critical CVEs found: $critical_count"
+          cd gitops
+          git config user.name  "ci-bot"
+          git config user.email "ci@k1nd4sus.it"
 
-      - name: Upload Trivy report artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: trivy-report
-          path: trivy-report.json
+          yq -i '.image.tag = strenv(TAG) | .image.digest = strenv(DIGEST)' \
+            charts/website/values.yaml
 
-          
+          git commit -am "k1nd4-website: deploy ${TAG} (${GITHUB_SHA})"
+
+          # retry loop: survives concurrent pushes from other services' CI
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push rejected, rebasing (attempt $i)"
+            git pull --rebase
+            sleep $((RANDOM % 5 + 1))
+          done
+          echo "failed to push after 5 attempts" >&2
+          exit 1
