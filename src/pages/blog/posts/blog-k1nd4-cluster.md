@@ -1,6 +1,6 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: Building the k1nd4-cluster: k3s, GitOps, and a Monitoring Stack That Just Works
+title: "Building the k1nd4-cluster: k3s, GitOps, and a Monitoring Stack That Just Works"
 author: niccolovlnt
 description: "A write-up of how we turned a single 32-core / 32 GB box into a self-hosting platform with GitOps deployments, automatic TLS, full observability, and email alerting."
 pubDate: 2026-03-07
