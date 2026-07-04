@@ -6,7 +6,8 @@ on:
 
 permissions:
   contents: read
-  packages: write        
+  packages: write
+  id-token: write
 
 jobs:
   build-push-bump:
@@ -31,6 +32,15 @@ jobs:
           DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' $IMAGE:$TAG | cut -d@ -f2)
           echo "tag=$TAG"       >> "$GITHUB_OUTPUT"
           echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Sign image (keyless)
+        env:
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          cosign sign --yes ghcr.io/k1nd4sus/k1nd4sus.github.io@${DIGEST}
 
       - name: Checkout gitops repo
         uses: actions/checkout@v4
