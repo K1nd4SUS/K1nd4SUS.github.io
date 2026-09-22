@@ -56,6 +56,14 @@ export const teamMembers: TeamMember[] = [
     email: "mailto:public.communications@k1nd4sus.it",
   },
   {
+    name: "Natalia Daniello Lopez",
+    role: "Vicepresident & Events",
+    university: "UniMi (University of Milan)",
+    tags: ["forensics"],
+    username: "Ntlia",
+    linkedin: "https://www.linkedin.com/in/natalia-daniello",
+  },
+  {
     name: "Alessandro Mellone",
     role: "Admin & Events",
     university: "UniMi (University of Milan)",
@@ -85,14 +93,6 @@ export const teamMembers: TeamMember[] = [
     tags: ["rev", "misc"],
     username: "dhn_00",
     linkedin: "https://www.linkedin.com/in/pavit-singh-1075a823b/",
-  },
-  {
-    name: "Natalia Daniello Lopez",
-    role: "Vicepresident & Events",
-    university: "UniMi (University of Milan)",
-    tags: ["forensics"],
-    username: "Ntlia",
-    linkedin: "https://www.linkedin.com/in/natalia-daniello",
   },
   {
     name: "Edoardo Bavaro",
