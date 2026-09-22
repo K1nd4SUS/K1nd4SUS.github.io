@@ -57,7 +57,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Alessandro Mellone",
-    role: "Vicepresident & Events",
+    role: "Admin & Events",
     university: "UniMi (University of Milan)",
     tags: ["misc", "network"],
     username: "melloc",
@@ -80,7 +80,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Pavit Singh",
-    role: "Admin & Activity Manager",
+    role: "Admin & Vicetreasurer",
     university: "UniMi (University of Milan)",
     tags: ["rev", "misc"],
     username: "dhn_00",
@@ -88,7 +88,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Natalia Daniello Lopez",
-    role: "Admin & Vice-Treasurer",
+    role: "Vicepresident & Events",
     university: "UniMi (University of Milan)",
     tags: ["forensics"],
     username: "Ntlia",
