@@ -8,6 +8,6 @@
 **Niccolò Volontè**: Vicepresidente con delega a Social Media  
 **Andrea Lunghi**: Vicepresidente con delega a CTF  
 **Cristian Salvi**: Vicepresidente e Tesoriere  
-**Alessandro Mellone**: Vicepresidente con delega ad Eventi
+**Natalia Daniello**: Vicepresidente con delega ad Eventi
 
 <sub> © 2025 Fernando Aldair Lopez Ponce, template Astro modificato da Emma Privitera per K!nd4SUS. Licenza MIT.</sub>
