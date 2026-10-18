@@ -1,0 +1,139 @@
+{
+  "$ref": "#/definitions/staticData",
+  "definitions": {
+    "staticData": {
+      "type": "object",
+      "properties": {
+        "profileImage": {
+          "type": "string"
+        },
+        "profileAlt": {
+          "type": "string"
+        },
+        "profileLink": {
+          "type": "string"
+        },
+        "profileTitle": {
+          "type": "string"
+        },
+        "profileName": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string",
+          "format": "uri"
+        },
+        "githubText": {
+          "type": "string"
+        },
+        "portfolioImage": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "linkedin": {
+          "type": "string",
+          "format": "uri"
+        },
+        "instagram": {
+          "type": "string",
+          "format": "uri"
+        },
+        "youtube": {
+          "type": "string",
+          "format": "uri"
+        },
+        "alias": {
+          "type": "string"
+        },
+        "contactSectionTitle": {
+          "type": "string"
+        },
+        "contactSectionSubtitle": {
+          "type": "string"
+        },
+        "contactSectionButtonText": {
+          "type": "string"
+        },
+        "contactSectionButtonIcon": {
+          "type": "string"
+        },
+        "techsTitle": {
+          "type": "string"
+        },
+        "instagramIconName": {
+          "type": "string"
+        },
+        "youtubeIconName": {
+          "type": "string"
+        },
+        "githubIconName": {
+          "type": "string"
+        },
+        "linkedinIconName": {
+          "type": "string"
+        },
+        "emailIconName": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        },
+        "pageDescription": {
+          "type": "string"
+        },
+        "OGImage": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "profileImage",
+        "profileAlt",
+        "profileLink",
+        "profileTitle",
+        "profileName",
+        "github",
+        "githubText",
+        "portfolioImage",
+        "email",
+        "linkedin",
+        "instagram",
+        "youtube",
+        "alias",
+        "contactSectionTitle",
+        "contactSectionSubtitle",
+        "contactSectionButtonText",
+        "contactSectionButtonIcon",
+        "techsTitle",
+        "instagramIconName",
+        "youtubeIconName",
+        "githubIconName",
+        "linkedinIconName",
+        "emailIconName",
+        "pageTitle",
+        "pageDescription",
+        "OGImage"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
