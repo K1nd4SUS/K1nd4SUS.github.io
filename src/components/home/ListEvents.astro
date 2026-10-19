@@ -3,7 +3,7 @@ import Event from "./Event.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 
-const allPosts = await Astro.glob("../../pages/events/*.md");
+const allPosts = Object.values(import.meta.glob<any>("../../pages/events/*.md", { eager: true }));
 
 // Sort by descending date (most recent first)
 allPosts.sort(

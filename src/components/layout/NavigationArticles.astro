@@ -1,5 +1,5 @@
 ---
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+const allPosts = Object.values(import.meta.glob<any>("../../pages/blog/posts/*.md", { eager: true }));
 // Ensure posts have a date before sorting them
 const sortedPosts = allPosts
   .filter(post => post.frontmatter.pubDate)

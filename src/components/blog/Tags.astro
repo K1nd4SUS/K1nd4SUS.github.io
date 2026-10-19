@@ -1,5 +1,5 @@
 ---
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+const allPosts = Object.values(import.meta.glob<any>("../../pages/blog/posts/*.md", { eager: true }));
 import Tag from "../ui/Tag.astro";
 
 import TagIcon from "../ui/TagIcon.astro";
