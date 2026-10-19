@@ -74,10 +74,10 @@ const socialLinks = [
   <section class="w-full max-w-3xl mx-auto mt-4 px-2 sm:px-0">
     <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black dark:text-white text-center">Posts</h2>
     <div class="flex flex-col gap-4 sm:gap-6">
-      {Astro.glob && (await Astro.glob('../blog/posts/*.md')).filter(post => post.frontmatter.author === author.slug).length === 0 && (
+      {Object.values(import.meta.glob<any>('../blog/posts/*.md', { eager: true })).filter(post => post.frontmatter.author === author.slug).length === 0 && (
         <div class="text-center text-neutral-500 dark:text-neutral-400">No blog posts found for this author.</div>
       )}
-      {(await Astro.glob('../blog/posts/*.md'))
+      {Object.values(import.meta.glob<any>('../blog/posts/*.md', { eager: true }))
         .filter(post => post.frontmatter.author === author.slug)
         .sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime())
         .map(post => (

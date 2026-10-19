@@ -26,11 +26,6 @@ const { frontmatter } = Astro.props;
     <article
       class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 max-sm:mt-0 px-14 max-md:px-10 max-sm:px-6 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
     >
-            </div>
-          </div>
-        </div>
-
-      </div>
       <div class="flex gap-4 items-center">
       <Heading text="K!nd4SUS" textGradient="Guidelines" />      
       </div>
@@ -41,3 +36,4 @@ const { frontmatter } = Astro.props;
     </article>
     <NavArticle title={frontmatter.title} />
   </section>
+</Layout>
