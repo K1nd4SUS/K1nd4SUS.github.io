@@ -6,7 +6,7 @@ import icon from "astro-icon";
 import node from "@astrojs/node";
 
 export default defineConfig({
-  site: "https://supersecretdemo.nicklab.it",
+  site: "https://k1nd4sus.it",
   adapter: node({
     mode: "standalone",
   }),
