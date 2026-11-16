@@ -22,8 +22,8 @@ const {
   aria-label="Introduction, events, people"
 >
   <div
-  class="mx-auto h-96 w-full max-w-7xl rounded-2xl bg-white/40 dark:bg-[#0E0E11]/40 border border-zinc-800 dark:border-zinc-800
-  backdrop-blur-md max-md:h-auto "
+  class="mx-auto h-96 w-full max-w-7xl rounded-2xl bg-white/90 dark:bg-zinc-900/60 border border-zinc-800 dark:border-zinc-800
+  max-md:h-auto"
   >
     <div
   class="group relative z-0 flex h-full items-center justify-center gap-8 
@@ -94,62 +94,8 @@ const {
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {teamMembers.map((member) => {
         const author = authors.find(a => a.name === member.name);
-        const cardContent = (
-          <>
-            <div class="flex-1 flex flex-col items-start gap-3">
-              <div class="text-lg font-semibold text-blacktext dark:text-white member-name">{member.name}</div>
-              {member.username && (
-                <div class="text-xs text-gray-500 dark:text-gray-400 -mt-2 mb-1">@{member.username} · {member.role}</div>
-              )}
-              <div class="text-sm text-gray-600 dark:text-gray-300 mb-2">{member.university}</div>
-              <div class="flex flex-wrap gap-1 mt-2">
-                {member.tags.map((tag) => {
-                  const conf = tagConfig[tag] ?? { bg: 'bg-gray-200', text: 'text-gray-700', icon: '', name: tag };
-                  return (
-                    <span class={`flex items-center gap-0.5 px-2 py-1 rounded-lg ${conf.bg} ${conf.text} text-xs font-bold`}>
-                      {conf.icon && <TagIcon name={conf.icon} class="w-4 h-4" />}
-                      {conf.name}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-            <div class="flex flex-col gap-2 items-center justify-start min-w-[32px] ml-2 mt-1">
-              {member.github && (
-                <a href={member.github} target="_blank" rel="noopener noreferrer" title="GitHub">
-                  <img src="/icons/github.svg" alt="GitHub" class="w-5 h-5 filter invert icon-hover-effect" />
-                </a>
-              )}
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                  <img src="/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5 filter invert icon-hover-effect" />
-                </a>
-              )}
-              {member.telegram && (
-                <a href={member.telegram} target="_blank" rel="noopener noreferrer" title="Telegram">
-                  <img src="/icons/telegram.svg" alt="Telegram" class="w-5 h-5 filter invert icon-hover-effect" />
-                </a>
-              )}
-              {member.instagram && (
-                <a href={member.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
-                  <img src="/icons/instagram.svg" alt="Instagram" class="w-5 h-5 filter invert icon-hover-effect" />
-                </a>
-              )}
-              {member.email && (
-                <a href={`mailto:${member.email}`} title="Email">
-                  <img src="/icons/email.svg" alt="Email" class="w-5 h-5 filter invert icon-hover-effect" />
-                </a>
-              )}
-              {member.link && (
-                <a href={member.link} target="_blank" rel="noopener noreferrer" title="Website">
-                  <img src="/icons/link.svg" alt="Website" class="w-5 h-5 filter invert icon-hover-effect" />
-                </a>
-              )}
-            </div>
-          </>
-        );
         return (
-          <div class="rounded-2xl bg-white/40 dark:bg-[#0E0E11]/40 border border-zinc-800 dark:border-zinc-800 p-6 flex flex-row items-start gap-3 backdrop-blur-md transition-transform duration-300 ease-in-out hover:scale-105 group" style="position:relative;">
+          <div class="rounded-2xl bg-white/90 dark:bg-zinc-900/60 border border-neutral-200 dark:border-zinc-800 hover:border-mint-400 p-6 flex flex-row items-start gap-3 transition-colors duration-200 ease-in-out group" style="position:relative;">
             {author ? (
               <a
                 href={`/authors/${author.slug}/`}

@@ -2,74 +2,112 @@
 import Layout from "../../layouts/Layout.astro";
 import Event from "../../components/home/Event.astro";
 import Heading from "../../components/ui/Heading.astro";
-import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
-  const allPosts: any[] = Object.values(import.meta.glob<any>("../events/*.md", { eager: true }));
+  const allPosts: any[] = Object.values(
+    import.meta.glob<any>("../events/*.md", { eager: true }),
+  );
   const uniqueTags: string[] = [
     ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
   ];
   return uniqueTags.map((tag: string) => {
     const filteredPosts = allPosts
       .filter((post: any) => post.frontmatter.tags.includes(tag))
-      .sort((a: any, b: any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+      .sort(
+        (a: any, b: any) =>
+          new Date(b.frontmatter.pubDate).getTime() -
+          new Date(a.frontmatter.pubDate).getTime(),
+      );
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: {
+        posts: filteredPosts,
+        allTags: uniqueTags,
+        totalCount: allPosts.length,
+      },
     };
   });
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { posts, allTags, totalCount } = Astro.props;
 ---
 
-<Layout pageTitle={`K!nd4SUS | ${tag.charAt(0).toUpperCase() + tag.slice(1)}` }>
-<section class="scroll-m-16 relative pt-8 pb-32 max-2xl:px-8 max-md:pt-4" id="events">
-  <div class="mx-auto max-w-7xl py-8">
-    <div class="flex gap-4 items-center justify-center text-center ">
-      <Heading text={`${tag.charAt(0).toUpperCase() + tag.slice(1)}s @ `} textGradient="K!nd4SUS" level={2} />
-    </div>
-    <p class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium">
-      All our events tagged as <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200">{tag}</span>.
-    </p>
-  </div>
-  <div
-    id="containerEvents"
-    class="mx-auto max-w-7xl p-2 py-4 columns-1 md:columns-2 xl:columns-3 gap-6 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
+<Layout
+  pageTitle={`K!nd4SUS | ${tag.charAt(0).toUpperCase() + tag.slice(1)}`}
+>
+  <section
+    class="scroll-m-16 relative pt-10 pb-32 max-2xl:px-8 max-sm:px-4"
+    id="events"
   >
-    {posts.length === 0 ? (
-      <div class="text-center text-lg text-gray-400 py-10">
-        No event found for this tag.
-      </div>
-    ) : (
-      posts.map((post) => (
-        <Event
-          class="mb-6"
-          url={post.url}
-          title={post.frontmatter.title}
-          description={post.frontmatter.description}
-          date={post.frontmatter.pubDate}
-          languages={post.frontmatter.languages}
-          image={post.frontmatter.image}
-          tags={post.frontmatter.tags}
+    <div class="mx-auto max-w-7xl py-6">
+      <div class="flex gap-4 items-center justify-center text-center">
+        <Heading
+          text={`${tag.charAt(0).toUpperCase() + tag.slice(1)}s @ `}
+          textGradient="K!nd4SUS"
+          level={1}
         />
-      ))
-    )}
-  </div>
-</section>
+      </div>
+      <p
+        class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
+      >
+        All our events tagged as <span
+          class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+          >{tag}</span
+        >.
+      </p>
 
-<style>
-  @media (min-width: 768px) {
-    #containerEvents {
-      column-count: 2;
-    }
-  }
-  
-  @media (min-width: 1280px) {
-    #containerEvents {
-      column-count: 3;
-    }
-  }
-</style>
+      <div class="flex flex-wrap gap-2 justify-center my-6">
+        <a
+          href="/events"
+          class="px-4 py-2 rounded-full border border-mint-400/60 bg-white dark:bg-mint-900/20 text-mint-600 dark:text-mint-300 text-sm font-bold transition duration-150 hover:scale-105"
+        >
+          all ({totalCount})
+        </a>
+        {
+          allTags.map((t: string) => {
+            const isActive = t === tag;
+            return (
+              <a
+                href={`/events/${t}`}
+                class:list={[
+                  "px-4 py-2 rounded-full border text-sm font-bold transition duration-150 hover:scale-105",
+                  isActive
+                    ? "border-mint-400 bg-mint-500/20 text-mint-700 dark:text-mint-200"
+                    : "border-mint-400/50 bg-white dark:bg-mint-900/20 text-mint-600 dark:text-mint-300",
+                ]}
+              >
+                {t}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    <div
+      id="containerEvents"
+      class="mx-auto max-w-7xl p-2 py-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+    >
+      {
+        posts.length === 0 ? (
+          <div class="col-span-full text-center text-lg text-gray-400 py-10">
+            No event found for this tag.
+          </div>
+        ) : (
+          posts.map((post: any, index: number) => (
+            <Event
+              url={post.url}
+              title={post.frontmatter.title}
+              description={post.frontmatter.description}
+              date={post.frontmatter.pubDate}
+              image={post.frontmatter.image}
+              tags={post.frontmatter.tags}
+              featured={index === 0}
+            />
+          ))
+        )
+      }
+    </div>
+  </section>
 </Layout>

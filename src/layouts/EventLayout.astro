@@ -27,7 +27,12 @@ const { frontmatter } = Astro.props;
         {frontmatter.tags && frontmatter.tags.length > 0 && (
           <div class="flex flex-wrap gap-2 mt-2">
             {frontmatter.tags.map((tag: string) => (
-              <span class="px-3 py-1 rounded-full border border-mint-400 bg-white dark:bg-mint-900/20 text-mint-600 text-xs font-bold">{tag}</span>
+              <a
+                href={`/events/${tag}`}
+                class="px-3 py-1 rounded-full border border-mint-400 bg-white dark:bg-mint-900/20 text-mint-600 dark:text-mint-300 text-xs font-bold transition duration-150 hover:scale-105"
+              >
+                {tag}
+              </a>
             ))}
           </div>
         )}

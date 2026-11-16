@@ -3,12 +3,16 @@
 @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
-body {
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
 	background-image: url('/images/wallpaper.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-position: center center;
+	z-index: -10;
+	pointer-events: none;
 }
 
 @theme {
@@ -275,12 +279,4 @@ display: block;  /* Show 'xmark' icon when .active is present */
 	border-radius: 50%;
 	filter: blur(10px);
 
-}
-
-#containerEvents > * {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 1.5rem;
 }

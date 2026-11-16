@@ -119,7 +119,7 @@ Lex è un tool per la generazione di **analizzatori lessicali**. Tramite la desc
 - **Regole di traduzione**: che consistono in una espressione regolare ed una azione associata che l'analizzatore deve compiere nel momento che il pattern regolare è riconosciuto.
 - **Procedure ausiliarie**: procedure richieste dalle azioni.
 
-```C
+```c
 
 
 %{
@@ -215,7 +215,7 @@ La costruzione del **parse tree** inizia dalle foglie e procede verso la radice,
 
 Yacc è un programma che permette di generare un **parser** in C tramite delle regole di derivazione descritte nel suo linguaggio. Appartiene alla categoria LR, più nello specifico è un parser **LALR**. La notazione utilizzata per le regole di produzione, ovvero le regole della grammatica, è simile alla **Backus-Naur form**. Inoltre riceve come input i lessemi verificati da **Lex**.
 
-``` C
+```c
 //struttura file yacc
 {declarations}
 %%
@@ -226,7 +226,7 @@ Yacc è un programma che permette di generare un **parser** in C tramite delle r
 
 Di seguito le regole di produzione del mio progetto:
 
-``` C
+```c
 %{
  
 #include <stdio.h>
@@ -412,7 +412,7 @@ Si occupa di controllare il significato delle istruzioni presenti nel codice di 
 
 Alcuni esempi di controlli semantici presenti nel mio progetto:
 
-```C
+```c
 directive : dirb ADDR  {add('V'); $$.nd=mknode($1.nd,NULL,"op");}
 
 

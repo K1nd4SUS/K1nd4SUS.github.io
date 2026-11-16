@@ -12,10 +12,12 @@ const {
   },
 } = Astro.props;
 
-const siteUrl = new URL(Astro.url).origin;
+const baseUrl = Astro.site ?? new URL(Astro.url).origin;
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl).toString();
+const ogImageUrl = new URL(ogimage.url, baseUrl).toString();
 const SEO = {
   sitename: "K!nd4SUS",
-  url: siteUrl,
+  url: canonicalUrl,
   locale: "en_US",
   author: "Emma Privitera",
 };
@@ -42,11 +44,11 @@ const SEO = {
     <meta name="description" content={description} />
     <meta name="author" content={SEO.author} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
+    <link rel="canonical" href={canonicalUrl}>
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogimage.url} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:alt" content={ogimage.alt} />
     <meta property="og:url" content={SEO.url} />
     <meta property="og:type" content="website" />

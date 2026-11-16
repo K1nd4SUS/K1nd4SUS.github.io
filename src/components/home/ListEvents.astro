@@ -1,9 +1,17 @@
 ---
 import Event from "./Event.astro";
 import Heading from "../ui/Heading.astro";
-import { Icon } from "astro-icon/components";
+import Button from "../ui/Button.astro";
 
-const allPosts = Object.values(import.meta.glob<any>("../../pages/events/*.md", { eager: true }));
+export interface Props {
+  limit?: number;
+}
+
+const { limit = 6 } = Astro.props;
+
+const allPosts = Object.values(
+  import.meta.glob<any>("../../pages/events/*.md", { eager: true }),
+);
 
 // Sort by descending date (most recent first)
 allPosts.sort(
@@ -11,10 +19,16 @@ allPosts.sort(
     new Date(b.frontmatter.pubDate).getTime() -
     new Date(a.frontmatter.pubDate).getTime(),
 );
+
+const uniqueTags = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+];
+
+const displayedPosts = limit ? allPosts.slice(0, limit) : allPosts;
 ---
 
 <section
-  class="scroll-m-16 relative pt-8 pb-32 max-2xl:px-8 max-md:pt-4"
+  class="scroll-m-16 relative pt-8 pb-24 max-2xl:px-8 max-md:pt-4"
   id="events"
 >
   <div class="mx-auto max-w-7xl py-8">
@@ -27,54 +41,60 @@ allPosts.sort(
     >
       We organize and join various <span
         class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-        >events</span>
-        and <span
+        >events</span
+      >
+      and <span
         class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-        >initiatives</span> open to everyone, suitable for enthusiasts. Here are listed <span
-        class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-        >events</span> that have already taken place in the past, ongoing events, or future events and their related information.
+        >initiatives</span
+      > open to everyone, suitable for enthusiasts. Here you can find our latest activities,
+      ongoing courses, and past editions.
     </p>
     <slot />
-    
-    {
-      (() => {
-        const uniqueTags = [
-          ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
-        ];
-        return (
-          <div class="flex flex-wrap gap-2 justify-center my-6">
-            {uniqueTags.map((tag: string) => (
-              <a
-                href={`/events/${tag}`}
-                class="px-4 py-2 rounded-full border border-mint-400 bg-white dark:bg-mint-900/20 text-mint-600 text-sm font-bold transition duration-150 hover:scale-105"
-              >
-                {tag}
-              </a>
-            ))}
-          </div>
-        );
-      })()
-    }
+
+    <div class="flex flex-wrap gap-2 justify-center my-6">
+      <a
+        href="/events"
+        class="px-4 py-2 rounded-full border border-mint-400 bg-linear-to-r from-riptide-500/20 to-mint-500/20 dark:from-riptide-400/20 dark:to-mint-400/20 text-blacktext dark:text-mint-200 text-sm font-bold transition duration-150 hover:scale-105"
+      >
+        all ({allPosts.length})
+      </a>
+      {
+        uniqueTags.map((tag: string) => (
+          <a
+            href={`/events/${tag}`}
+            class="px-4 py-2 rounded-full border border-mint-400/60 bg-white dark:bg-mint-900/20 text-mint-600 dark:text-mint-300 text-sm font-bold transition duration-150 hover:scale-105 hover:border-mint-400"
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </div>
   </div>
 
   <div
-  id="containerEvents"
-  class="mx-auto max-w-7xl p-2 py-4 columns-1 md:columns-2 xl:columns-3 gap-6"
->
-  {
-    allPosts.map((post) => (
-      <Event
-        class="mb-6"
-        url={post.url}
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        date={post.frontmatter.pubDate}
-        languages={post.frontmatter.languages}
-        image={post.frontmatter.image}
-        tags={post.frontmatter.tags}
-      />
-    ))
-  }
-</div>
+    id="containerEvents"
+    class="mx-auto max-w-7xl p-2 py-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+  >
+    {
+      displayedPosts.map((post, index) => (
+        <Event
+          url={post.url}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          date={post.frontmatter.pubDate}
+          image={post.frontmatter.image}
+          tags={post.frontmatter.tags}
+          featured={index === 0}
+        />
+      ))
+    }
+  </div>
 
+  <div class="mx-auto max-w-7xl mt-10 flex justify-center">
+    <Button
+      link="/events"
+      text={`View all events (${allPosts.length})`}
+      variant="dark"
+    />
+  </div>
 </section>

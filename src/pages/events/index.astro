@@ -1,0 +1,291 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Event from "../../components/home/Event.astro";
+import Heading from "../../components/ui/Heading.astro";
+
+const allPosts = Object.values(
+  import.meta.glob<any>("./*.md", { eager: true }),
+);
+
+allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime(),
+);
+
+const uniqueTags: string[] = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+];
+
+// Group events by year (descending)
+const eventsByYear = allPosts.reduce(
+  (acc: Record<string, any[]>, post: any) => {
+    const year = new Date(post.frontmatter.pubDate)
+      .getUTCFullYear()
+      .toString();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(post);
+    return acc;
+  },
+  {},
+);
+
+const sortedYears = Object.keys(eventsByYear).sort(
+  (a, b) => Number(b) - Number(a),
+);
+const latestYear = sortedYears[0];
+---
+
+<Layout
+  pageTitle="K!nd4SUS | Events"
+  description="Conferences, CTFs, courses, and cybersecurity initiatives organized by K!nd4SUS at the University of Milan."
+>
+  <section class="relative pt-10 pb-32 max-2xl:px-8 max-sm:px-4" id="events-page">
+    <div class="mx-auto max-w-7xl py-6">
+      <div class="flex gap-2 sm:gap-4 items-center justify-center text-center">
+        <Heading text="K!nd4SUS" textGradient="Events" level={1} />
+      </div>
+
+      <p
+        class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
+      >
+        Explore all <span
+          class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+          >conferences</span
+        >, <span
+          class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+          >CTFs</span
+        >, <span
+          class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+          >courses</span
+        >, and <span
+          class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
+          >initiatives</span
+        > organized by our team over the years.
+      </p>
+
+      {/* Filter Bar */}
+      <div
+        class="mx-auto max-w-4xl mt-8 p-5 rounded-3xl bg-white/90 dark:bg-zinc-900/60 border border-zinc-800 flex flex-col gap-4"
+      >
+        {/* Category Filters */}
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <button
+            type="button"
+            data-filter-tag="all"
+            class="tag-filter-btn active px-4 py-1.5 rounded-full border border-mint-400 bg-mint-500/20 text-mint-700 dark:text-mint-200 text-sm font-bold transition duration-150 cursor-pointer hover:scale-105"
+          >
+            all categories ({allPosts.length})
+          </button>
+          {
+            uniqueTags.map((tag: string) => (
+              <button
+                type="button"
+                data-filter-tag={tag}
+                class="tag-filter-btn px-4 py-1.5 rounded-full border border-zinc-700 bg-white dark:bg-zinc-900/50 text-blacktext dark:text-zinc-300 text-sm font-bold transition duration-150 cursor-pointer hover:border-mint-400/50 hover:text-mint-300"
+              >
+                {tag}
+              </button>
+            ))
+          }
+        </div>
+
+        {/* Year Filters */}
+        {
+          sortedYears.length > 1 && (
+            <div class="flex flex-wrap items-center justify-center gap-2 pt-3 border-t border-zinc-800/70">
+              <span class="text-xs font-bold tracking-wider text-zinc-400 mr-1">
+                year:
+              </span>
+              <button
+                type="button"
+                data-filter-year="all"
+                class="year-filter-btn active px-3 py-1 rounded-full border border-mint-400/80 bg-mint-500/20 text-blacktext dark:text-mint-200 text-xs font-bold transition duration-150 cursor-pointer hover:scale-105"
+              >
+                all
+              </button>
+              {sortedYears.map((year) => (
+                <button
+                  type="button"
+                  data-filter-year={year}
+                  class="year-filter-btn px-3 py-1 rounded-full border border-zinc-700 bg-transparent text-blacktext dark:text-zinc-300 text-xs font-bold transition duration-150 cursor-pointer hover:border-mint-400/60 hover:text-mint-300"
+                >
+                  {year} ({eventsByYear[year].length})
+                </button>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </div>
+
+    {/* Grouped Events by Year */}
+    <div class="mx-auto max-w-7xl flex flex-col gap-14 mt-4">
+      {
+        sortedYears.map((year) => {
+          const isLatestYear = year === latestYear;
+          const yearPosts = eventsByYear[year];
+          return (
+            <div class="year-section flex flex-col gap-6" data-year-section={year}>
+              <div class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-4 px-2">
+                <div class="flex items-center gap-3">
+                  <h2 class="text-3xl font-extrabold text-blacktext dark:text-white flex items-center gap-3">
+                    <span class="bg-linear-to-r from-riptide-400 to-mint-400 bg-clip-text text-transparent">
+                      {year}
+                    </span>
+                    <span class="text-lg max-sm:text-base font-semibold text-zinc-500 dark:text-zinc-400">
+                      {isLatestYear ? "Latest/ongoing events" : "Past events"}
+                    </span>
+                  </h2>
+                </div>
+                <span class="year-count px-3 py-1 rounded-full bg-zinc-900/80 border border-zinc-800 text-xs font-bold text-mint-300">
+                  {yearPosts.length} {yearPosts.length === 1 ? "event" : "events"}
+                </span>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-2">
+                {yearPosts.map((post: any, index: number) => (
+                  <div
+                    class="event-card-wrapper h-full"
+                    data-tags={(post.frontmatter.tags || []).join(",")}
+                    data-year={year}
+                  >
+                    <Event
+                      url={post.url}
+                      title={post.frontmatter.title}
+                      description={post.frontmatter.description}
+                      date={post.frontmatter.pubDate}
+                      image={post.frontmatter.image}
+                      tags={post.frontmatter.tags}
+                      featured={isLatestYear && index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })
+      }
+
+      <div
+        id="noEventsMessage"
+        class="hidden text-center text-lg text-gray-400 py-12"
+      >
+        No events found for the selected filters.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let activeTag = "all";
+      let activeYear = "all";
+
+      const tagButtons = document.querySelectorAll<HTMLButtonElement>(".tag-filter-btn");
+      const yearButtons = document.querySelectorAll<HTMLButtonElement>(".year-filter-btn");
+      const yearSections = document.querySelectorAll<HTMLElement>(".year-section");
+      const noEventsMsg = document.getElementById("noEventsMessage");
+
+      const activeTagClasses = [
+        "border-mint-400",
+        "bg-mint-500/20",
+        "text-mint-700",
+        "dark:text-mint-200",
+      ];
+      const inactiveTagClasses = [
+        "border-zinc-700",
+        "bg-white",
+        "dark:bg-zinc-900/50",
+        "text-blacktext",
+        "dark:text-zinc-300",
+      ];
+
+      const activeYearClasses = [
+        "border-mint-400/80",
+        "bg-mint-500/20",
+        "dark:text-mint-200",
+      ];
+      const inactiveYearClasses = [
+        "border-zinc-700",
+        "bg-transparent",
+        "dark:text-zinc-300",
+      ];
+
+      function applyFilters() {
+        let totalVisible = 0;
+
+        yearSections.forEach((section) => {
+          const sectionYear = section.getAttribute("data-year-section");
+          const cards = section.querySelectorAll<HTMLElement>(".event-card-wrapper");
+          const countBadge = section.querySelector<HTMLElement>(".year-count");
+          let visibleInSection = 0;
+
+          cards.forEach((card) => {
+            const cardTags = (card.getAttribute("data-tags") || "").split(",");
+            const cardYear = card.getAttribute("data-year") || "";
+
+            const matchesTag = activeTag === "all" || cardTags.includes(activeTag);
+            const matchesYear = activeYear === "all" || cardYear === activeYear;
+
+            if (matchesTag && matchesYear) {
+              card.classList.remove("hidden");
+              visibleInSection++;
+              totalVisible++;
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+
+          if (visibleInSection > 0 && (activeYear === "all" || sectionYear === activeYear)) {
+            section.classList.remove("hidden");
+            if (countBadge) {
+              countBadge.textContent = `${visibleInSection} ${visibleInSection === 1 ? "event" : "events"}`;
+            }
+          } else {
+            section.classList.add("hidden");
+          }
+        });
+
+        if (noEventsMsg) {
+          noEventsMsg.classList.toggle("hidden", totalVisible > 0);
+        }
+      }
+
+      tagButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeTag = btn.getAttribute("data-filter-tag") || "all";
+          tagButtons.forEach((b) => {
+            const isSelected = b === btn;
+            b.classList.toggle("active", isSelected);
+            if (isSelected) {
+              b.classList.remove(...inactiveTagClasses);
+              b.classList.add(...activeTagClasses);
+            } else {
+              b.classList.remove(...activeTagClasses);
+              b.classList.add(...inactiveTagClasses);
+            }
+          });
+          applyFilters();
+        });
+      });
+
+      yearButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeYear = btn.getAttribute("data-filter-year") || "all";
+          yearButtons.forEach((b) => {
+            const isSelected = b === btn;
+            b.classList.toggle("active", isSelected);
+            if (isSelected) {
+              b.classList.remove(...inactiveYearClasses);
+              b.classList.add(...activeYearClasses);
+            } else {
+              b.classList.remove(...activeYearClasses);
+              b.classList.add(...inactiveYearClasses);
+            }
+          });
+          applyFilters();
+        });
+      });
+    });
+  </script>
+</Layout>

@@ -1,20 +1,8 @@
 ---
 import Navigation from "./Navigation.astro";
 import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
-
-const currentPath = Astro.url.pathname;
-const routes = ["/", "/home", "/about"];
-
-// Check if the current route is in the list of routes
-const isActiveRoute = routes.includes(currentPath);
-
-const navItems = isActiveRoute
-  ? ["home", "services", "events", "about", "contact", "rules", "blog", "FAQ"]
-  : ["home", "services", "events", "about", "contact", "rules", "blog", "FAQ"];
+const navItems = ["home", "services", "events", "about", "contact", "rules", "blog", "FAQ"];
 ---
 
 <header
